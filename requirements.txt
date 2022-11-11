@@ -9,6 +9,7 @@ django-nose
 django-phonenumber-field
 django-phonenumbers
 flake8
+pillow
 pip-chill
 psycopg2-binary
 toml
