@@ -1,0 +1,13 @@
+{% extends "../base.html" %}
+{% block title %}
+part_{{ part.id }}
+{% endblock title %}
+{% block content %}
+<h1>{{ part.part_code }}</h1>
+{{ part.description }}
+{% if part.image %}
+<img src="{{ part.image.url }}"
+    alt="partno {{ part.part_code }}">
+{# {% else %} #}
+{% endif %}
+{% endblock content %}
