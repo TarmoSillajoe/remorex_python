@@ -10,7 +10,7 @@ def part_detail_view(request, part_id):
 
 def part_create_view(request):
     if request.method == "POST":
-        form = PartForm(request.POST)
+        form = PartForm(request.POST, request.FILES)
         if form.is_valid():
             part = form.save()
             return redirect("part_detail", part_id=part.id)
