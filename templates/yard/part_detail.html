@@ -3,11 +3,13 @@
 part_{{ part.id }}
 {% endblock title %}
 {% block content %}
-<h1>{{ part.part_code }}</h1>
-{{ part.description }}
+<div class="dark:text-gray-400">{{ part.part_code }}
+</div>
+<span class="dark:text-white">
+    {{ part.description }}
+</span>
 {% if part.image %}
 <img src="{{ part.image.url }}"
     alt="partno {{ part.part_code }}">
-{# {% else %} #}
 {% endif %}
 {% endblock content %}

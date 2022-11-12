@@ -80,8 +80,12 @@ WSGI_APPLICATION = "remorex.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "remoreks",
+        "USER": "postgres",
+        "PASSWORD": "mysecret",
+        "HOST": "172.22.240.218",
+        "PORT": "5432",
     }
 }
 
@@ -132,10 +136,11 @@ LOGOUT_REDIRECT_URL = "home"
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
-COMPRESS_ROOT = BASE_DIR / "static"
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
 COMPRESS_ENABLED = True
+COMPRESS_ROOT = BASE_DIR / "static"
 STATICFILES_FINDERS = [
     "compressor.finders.CompressorFinder",
 ]
-MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR / "media"
+COMPRESS_OFFLINE = True
