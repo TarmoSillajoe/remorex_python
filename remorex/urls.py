@@ -19,9 +19,9 @@ from django.conf.urls.static import static
 from django.urls import path, include
 
 urlpatterns = [
+    path("admin/", admin.site.urls),
     path("accounts/", include("accounts.urls")),
     path("", include("yard.urls")),
-    path("admin/", admin.site.urls),
 ]
 
 if settings.DEBUG:

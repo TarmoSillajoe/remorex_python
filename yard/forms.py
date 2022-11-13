@@ -6,4 +6,10 @@ from .models import Part
 class PartForm(ModelForm):
     class Meta:
         model = Part
-        fields = ["part_code", "description", "image"]
+        fields = [
+            "part_code",
+            "description",
+            "assembly_group",
+            "cars",
+            "image",
+        ]

@@ -5,3 +5,4 @@ node_modules/*
 /.vscode
 **/img/*
 **/images/*
+**/CACHE/*
