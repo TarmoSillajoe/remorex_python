@@ -6,6 +6,7 @@ from .views import (
     part_create_view,
     part_edit_view,
     assembly_groups_view,
+    parts_for_the_assembly_group,
 )
 
 urlpatterns = [
@@ -17,7 +18,7 @@ urlpatterns = [
     path("parts/", assembly_groups_view, name="assembly_groups"),
     path(
         "parts/group/<int:assembly_group_id>",
-        TemplateView.as_view(template_name="contact.html"),
+        parts_for_the_assembly_group,
         name="assemby_group_parts",
     ),
     path("part/new/", part_create_view, name="part_create"),
