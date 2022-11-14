@@ -84,7 +84,7 @@ DATABASES = {
         "NAME": "remoreks",
         "USER": "postgres",
         "PASSWORD": "mysecret",
-        "HOST": "172.22.240.218",
+        "HOST": "172.22.241.23",
         "PORT": "5432",
     }
 }
@@ -145,6 +145,6 @@ COMPRESS_ROOT = BASE_DIR / "static"
 COMPRESS_ENABLED = True
 STATICFILES_FINDERS = (
     "compressor.finders.CompressorFinder",
-    "django.contrib.staticfiles.finders.FileSystemFinder",
-    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    # "django.contrib.staticfiles.finders.FileSystemFinder",
+    # "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 )

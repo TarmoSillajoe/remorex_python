@@ -1,0 +1,6 @@
+<div>
+    {% for assembly_group in assembly_groups %}
+    <a href="{% url 'assemby_group_parts' assembly_group_id=assembly_group.id %}"
+        class="">{{ assembly_group.name }}</a>
+    {% endfor %}
+</div>

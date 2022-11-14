@@ -1,6 +1,14 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Part
+from django.contrib.auth.decorators import login_required
+from .models import Part, AssemblyGroup
 from .forms import PartForm
+
+
+def assembly_groups_view(request):
+    assembly_groups = AssemblyGroup.objects.all()
+    return render(
+        request, "yard/assembly_groups.html", {"assembly_groups": assembly_groups}
+    )
 
 
 def part_detail_view(request, part_id):
@@ -8,6 +16,7 @@ def part_detail_view(request, part_id):
     return render(request, "yard/part_detail.html", {"part": part})
 
 
+@login_required
 def part_create_view(request):
     if request.method == "POST":
         form = PartForm(request.POST, request.FILES)
@@ -19,6 +28,7 @@ def part_create_view(request):
     return render(request, "yard/part_edit.html", {"form": form})
 
 
+@login_required
 def part_edit_view(request, part_id):
     part = get_object_or_404(Part, id=part_id)
     if request.method == "POST":

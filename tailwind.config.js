@@ -14,6 +14,7 @@ module.exports = {
       emerald: colors.emerald,
       indigo: colors.indigo,
       yellow: colors.yellow,
+      violet: colors.violet,
     },
   },
   plugins: [require("flowbite/plugin")],

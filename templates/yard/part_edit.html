@@ -3,11 +3,31 @@
 new part
 {% endblock title %}
 {% block content %}
-<h2 class="dark:text-white">New Part</h2>
-<form enctype="multipart/form-data"
-    method="post">
+
+
+<form enctype="multipart/form-data" method="post" novalidate>
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save</button>
-</form>
+  
+    {{ form.non_field_errors }}
+  
+    {% for hidden_field in form.hidden_fields %}
+      {{ hidden_field.errors }}
+      {{ hidden_field }}
+    {% endfor %}
+  
+    <table border="1">
+      {% for field in form.visible_fields %}
+        <tr>
+          <th>{{ field.label_tag }}</th>
+          <td>
+            {{ field.errors }}
+            {{ field }}
+            {{ field.help_text }}
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  
+    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save</button>
+  </form>
 {% endblock content %}
