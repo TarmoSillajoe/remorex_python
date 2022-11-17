@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Part, AssemblyGroup
 from .forms import PartForm
+from django.http import HttpResponse, HttpResponseRedirect
 
 
 def assembly_groups_view(request):
@@ -32,6 +33,16 @@ def part_create_view(request):
     else:
         form = PartForm()
     return render(request, "yard/part_edit.html", {"form": form})
+
+
+@login_required
+def part_delete_view(request, part_id):
+    part = get_object_or_404(Part, id=part_id)
+    context = {"part": part}
+    if request.method == "POST":
+        part.delete()
+        return HttpResponseRedirect("/")
+    return render(request, "yard/part_delete.html", context)
 
 
 @login_required

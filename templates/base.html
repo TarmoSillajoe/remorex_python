@@ -28,6 +28,9 @@
             document.documentElement.classList.remove('dark')
         }
     </script>
+    <script src="https://unpkg.com/htmx.org@1.8.4"
+        integrity="sha384-wg5Y/JwF7VxGk4zLsJEcAojRtlVp1FKKdGy1qN+OMtdq72WRvX/EdRdqg/LOhYeV"
+        crossorigin="anonymous"></script>
 </head>
 
 <body class="bg-green-100 dark:bg-violet-800">
@@ -124,6 +127,13 @@
     <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js">
     </script>
     <script src="{% static 'js/script.js' %}"></script>
+    <script>
+        document.body.addEventListener('htmx:configRequest', (
+            event) => {
+                event.detail.headers['X-CSRFToken'] =
+                    '{{ csrf_token }}';
+            })
+    </script>
 </body>
 
 </html>

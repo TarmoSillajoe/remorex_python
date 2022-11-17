@@ -7,6 +7,7 @@ from .views import (
     part_edit_view,
     assembly_groups_view,
     parts_for_the_assembly_group,
+    part_delete_view,
 )
 
 urlpatterns = [
@@ -17,10 +18,11 @@ urlpatterns = [
     path("part/<int:part_id>/", part_detail_view, name="part_detail"),
     path("parts/", assembly_groups_view, name="assembly_groups"),
     path(
-        "parts/group/<int:assembly_group_id>",
+        "parts/group/<int:assembly_group_id>/",
         parts_for_the_assembly_group,
         name="assemby_group_parts",
     ),
     path("part/new/", part_create_view, name="part_create"),
     path("part/<int:part_id>/edit/", part_edit_view, name="part_edit"),
+    path("part/<int:part_id>/delete/", part_delete_view, name="part_delete"),
 ]

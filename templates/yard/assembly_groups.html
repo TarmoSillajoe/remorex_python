@@ -1,6 +1,16 @@
+{% extends "../base.html" %}
+{% block title %}
+Assembly-Groups
+{% endblock title %}
+{% block content %}
 <div>
     {% for assembly_group in assembly_groups %}
-    <a href="{% url 'assemby_group_parts' assembly_group_id=assembly_group.id %}"
-        class="">{{ assembly_group.name }}</a>
+    <div class="assembly_group dark:text-gray-400"
+        hx-target="#parts_for"
+        hx-get="{% url 'assemby_group_parts' assembly_group_id=assembly_group.id %}">
+        {{assembly_group.name}}
+    </div>
     {% endfor %}
 </div>
+<div id="parts_for"></div>
+{% endblock content %}
