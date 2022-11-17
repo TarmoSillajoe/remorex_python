@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "compressor",
     "accounts",
     "yard",
+    "posts",
 ]
 
 MIDDLEWARE = [
