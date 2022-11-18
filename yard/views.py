@@ -19,8 +19,9 @@ def parts_for_the_assembly_group(request, assembly_group_id):
 
 
 def part_detail_view(request, part_id):
+    user = request.user
     part = get_object_or_404(Part, id=part_id)
-    return render(request, "yard/part_detail.html", {"part": part})
+    return render(request, "yard/part_detail.html", {"part": part, "user": user})
 
 
 @login_required
@@ -48,6 +49,7 @@ def part_delete_view(request, part_id):
 @login_required
 def part_edit_view(request, part_id):
     part = get_object_or_404(Part, id=part_id)
+
     if request.method == "POST":
         form = PartForm(request.POST, request.FILES, instance=part)
         if form.is_valid():
