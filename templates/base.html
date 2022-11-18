@@ -123,16 +123,15 @@
         {% block content %}
         {% endblock content %}
     </div>
-    {# <script src="node_modules/flowbite/src/flowbite.js"></script> #}
     <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js">
     </script>
     <script src="{% static 'js/script.js' %}"></script>
     <script>
         document.body.addEventListener('htmx:configRequest', (
             event) => {
-                event.detail.headers['X-CSRFToken'] =
-                    '{{ csrf_token }}';
-            })
+            event.detail.headers['X-CSRFToken'] =
+                '{{ csrf_token }}';
+        })
     </script>
 </body>
 

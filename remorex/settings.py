@@ -146,6 +146,6 @@ COMPRESS_ROOT = BASE_DIR / "static"
 COMPRESS_ENABLED = True
 STATICFILES_FINDERS = (
     "compressor.finders.CompressorFinder",
-    # "django.contrib.staticfiles.finders.FileSystemFinder",
-    # "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 )

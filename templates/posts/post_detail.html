@@ -1,0 +1,8 @@
+{% load markdown_extras %}
+{% load static %}
+<h1>{{ post.title }}</h1>
+<div>{{ post.content | markdown | safe }}</div>
+{% if post.thumbnail %}
+<img src="{{ post.thumbnail.url }}"
+    alt="post {{ post.slug }}">
+{% endif %}
