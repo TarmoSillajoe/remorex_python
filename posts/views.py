@@ -3,7 +3,7 @@ from .models import Post
 
 
 def posts_list_view(request):
-    latest_posts = Post.objects.order_by("-timestamp")[0:3]
+    latest_posts = Post.objects.order_by("-timestamp")[:10]
     context = {"latest_posts": latest_posts}
     return render(request, "posts/posts_list.html", context)
 
