@@ -9,19 +9,27 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+import os
+import subprocess
 from pathlib import Path
+
+from dotenv import dotenv_values
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+dotenv_path = Path(BASE_DIR / ".env")
+config = dotenv_values(dotenv_path)
 
 
-DEBUG = True
+DEBUG = config.get("DJANGO_DEBUG", "") != "False"
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-*1_lcvqs=v^09c121wh2sz(cy=ei67fof(fz!z_fqkge-1l6a0"
+SECRET_KEY = config.get(
+    "DJANGO_SECRET_KEY",
+    "django-insecure-*1_lcvqs=v^09c121wh2sz(cy=ei67fof(fz!z_fqkge-1l6a0",
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
@@ -82,10 +90,12 @@ WSGI_APPLICATION = "remorex.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "remoreks",
-        "USER": "postgres",
-        "PASSWORD": "mysecret",
-        "HOST": "172.18.116.99",
+        "NAME": config["NAME"],
+        "USER": config["USER"],
+        "PASSWORD": config["PASSWORD"],
+        "HOST": subprocess.run(
+            ["hostname", "-I"], capture_output=True, text=True
+        ).stdout.strip(),
         "PORT": "5432",
     }
 }
@@ -95,18 +105,18 @@ DATABASES = {
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
-    },
+    # {
+    #     "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+    # },
+    # {
+    #     "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+    # },
+    # {
+    #     "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+    # },
+    # {
+    #     "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+    # },
 ]
 
 

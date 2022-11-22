@@ -6,3 +6,5 @@ node_modules/*
 **/img/*
 **/images/*
 **/CACHE/*
+secret_key.txt
+.env
