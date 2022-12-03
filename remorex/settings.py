@@ -93,9 +93,14 @@ DATABASES = {
         "NAME": config["NAME"],
         "USER": config["USER"],
         "PASSWORD": config["PASSWORD"],
-        "HOST": subprocess.run(
-            ["hostname", "-I"], capture_output=True, text=True
-        ).stdout.strip(),
+        "HOST": config.get(
+            "DATABASE_URL",
+            subprocess.run(
+                ["hostname", "-I"],
+                capture_output=True,
+                text=True,
+            ).stdout.strip(),
+        ),
         "PORT": "5432",
     }
 }
