@@ -101,7 +101,7 @@ DATABASES = {
                 text=True,
             ).stdout.strip(),
         ),
-        "PORT": "5432",
+        "PORT": config.get("PORT", "5432"),
     }
 }
 
