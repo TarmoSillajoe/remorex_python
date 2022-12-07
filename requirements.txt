@@ -8,6 +8,7 @@ django-crispy-forms
 django-nose
 django-phonenumber-field
 django-phonenumbers
+dj-database-url
 flake8
 gunicorn
 Markdown
