@@ -1,7 +1,7 @@
 databases:
   - name: remoreks
     databaseName: remoreks
-    user: postgres
+    user: remoreks
 
 services:
   - type: web
