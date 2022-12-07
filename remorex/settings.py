@@ -13,7 +13,13 @@ import os
 import subprocess
 from pathlib import Path
 
+import dj_database_url
 from dotenv import dotenv_values
+
+SECRET_KEY = os.environ.get(
+    "SECRET_KEY",
+    default="django-insecure-*1_lcvqs=v^09c121wh2sz(cy=ei67fof(fz!z_fqkge-1l6a0",
+)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,20 +27,19 @@ dotenv_path = Path(BASE_DIR / ".env")
 config = dotenv_values(dotenv_path)
 
 
-DEBUG = config.get("DJANGO_DEBUG", "") != "False"
+DEBUG = "RENDER" not in os.environ
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config.get(
-    "DJANGO_SECRET_KEY",
-    "django-insecure-*1_lcvqs=v^09c121wh2sz(cy=ei67fof(fz!z_fqkge-1l6a0",
-)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
 ALLOWED_HOSTS = []
 
+RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 # Application definition
 
@@ -52,6 +57,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -87,22 +93,12 @@ WSGI_APPLICATION = "remorex.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": config["NAME"],
-        "USER": config["USER"],
-        "PASSWORD": config["PASSWORD"],
-        "HOST": config.get(
-            "DATABASE_URL",
-            subprocess.run(
-                ["hostname", "-I"],
-                capture_output=True,
-                text=True,
-            ).stdout.strip(),
-        ),
-        "PORT": config.get("PORT", "5432"),
-    }
+    "default": dj_database_url.config(
+        default="postgresql://postgres:mysecret@localhost:5432/remoreks",
+        conn_max_age=600,
+    )
 }
 
 
