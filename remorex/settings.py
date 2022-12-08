@@ -113,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
     #     "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
     # },
     # {
-    #     "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+    #     "NAME": "django.contrib./.password_validation.CommonPasswordValidator",
     # },
     # {
     #     "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
@@ -139,9 +139,7 @@ USE_TZ = True
 if DEBUG:
     STATIC_URL = "static/"
 
-    STATICFILES_DIRS = [
-        BASE_DIR / "static",
-    ]
+    STATICFILES_DIRS = [BASE_DIR / "static"]
 
 
 # Default primary key field type
@@ -163,5 +161,5 @@ STATICFILES_FINDERS = (
 )
 
 if not DEBUG:
-    STATIC_ROOT = BASE_DIR / "static"
+    STATIC_ROOT = BASE_DIR / "staticfiles"
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
