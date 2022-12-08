@@ -5,6 +5,7 @@ node_modules/*
 /.vscode
 **/img/*
 **/images/*
+static/src/output.css
 **/CACHE/*
 secret_key.txt
 .env
