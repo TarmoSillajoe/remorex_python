@@ -50,10 +50,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "compressor",
     "accounts",
     "yard",
     "posts",
+    "compressor",
 ]
 
 MIDDLEWARE = [
@@ -138,7 +138,6 @@ USE_TZ = True
 
 if DEBUG:
     STATIC_URL = "static/"
-
     STATICFILES_DIRS = [BASE_DIR / "static"]
 
 
@@ -155,11 +154,11 @@ MEDIA_ROOT = BASE_DIR / "media"
 COMPRESS_ROOT = BASE_DIR / "static"
 COMPRESS_ENABLED = True
 STATICFILES_FINDERS = (
-    "compressor.finders.CompressorFinder",
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    "compressor.finders.CompressorFinder",
 )
 
 if not DEBUG:
-    STATIC_ROOT = BASE_DIR / "staticfiles"
+    STATIC_ROOT = BASE_DIR / "static"
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
