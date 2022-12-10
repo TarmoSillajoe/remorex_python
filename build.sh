@@ -6,6 +6,6 @@ pip install --upgrade pip
 pip install -r requirements.txt
 
 npm install
-npm run build
+npm run watch
 python manage.py collectstatic --no-input
 python manage.py migrate
