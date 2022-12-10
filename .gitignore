@@ -3,9 +3,8 @@ __pycache__/*
 node_modules/*
 *.pyc
 /.vscode
-**/img/*
 **/images/*
-static/src/output.css
+output.css
 **/CACHE/*
 secret_key.txt
 .env
