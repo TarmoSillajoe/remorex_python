@@ -3,7 +3,7 @@ from django.urls import path
 from django.views.generic import TemplateView
 from .views import (
     part_detail_view,
-    part_create_view,w
+    part_create_view,
     part_edit_view,
     assembly_groups_view,
     parts_for_the_assembly_group,
