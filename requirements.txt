@@ -19,4 +19,4 @@ python-dotenv
 toml
 types-cryptography
 typing-extensions
-whitenoise [brotly]
+whitenoise
