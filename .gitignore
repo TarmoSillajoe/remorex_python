@@ -7,5 +7,7 @@ node_modules/*
 output.css
 **/CACHE/*
 secret_key.txt
-staticfiles/*/
+staticfiles/js
+staticfiles/src
+staticfiles/img
 .env
