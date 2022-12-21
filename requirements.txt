@@ -20,4 +20,4 @@ python-memcached
 toml
 types-cryptography
 typing-extensions
-'whitenoise[brotli]'
+whitenoise[brotli]
