@@ -5,6 +5,7 @@ cryptography
 django-allauth
 django-compressor
 django-crispy-forms
+django-htmx
 django-nose
 django-phonenumber-field
 django-phonenumbers
@@ -21,3 +22,4 @@ toml
 types-cryptography
 typing-extensions
 whitenoise[brotli]
+wheel
