@@ -6,7 +6,7 @@ authors = ["tarmo <tsillajoe@gmail.com>"]
 
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.8"
 Brotli = "^1.0.9"
 django = "^4.0.0"
 django-allauth = "^0.51.0"
@@ -20,7 +20,7 @@ psycopg2-binary = "^2.9.5"
 python-dotenv = "^0.21.0"
 Pillow = "^9.3.0"
 urllib3 = "^1.26"
-whitenoise = "^6.2.0"
+whitenoise = {extras = ["brotli"], version = "^6.2.0"}
 
 [build-system]
 requires = ["poetry-core"]
