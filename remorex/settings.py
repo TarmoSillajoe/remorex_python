@@ -138,8 +138,8 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 
 if not DEBUG:
     STATIC_ROOT = BASE_DIR / "staticfiles"
-    # STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-    STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+    # STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
     # STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 
 STATICFILES_FINDERS = [
