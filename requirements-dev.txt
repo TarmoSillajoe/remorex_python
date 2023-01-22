@@ -1,0 +1,7 @@
+-r requirements.txt
+autopep8
+black
+coverage
+flake8
+django-nose
+pip-chill
