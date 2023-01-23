@@ -1,103 +1,77 @@
 {% extends "base.html" %}
-{% load static %}
 {% block title %}
-Contact
+    Contact
 {% endblock title %}
-
 {% block content %}
-
-
-
-<div
-    class="relative bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">
-    <div class="mx-auto max-w-md">
-        <div class="divide-y divide-gray-300/50">
-
-            <!-- aadress -->
-            <section class="w-full p-2 max-w-7xl mx-auto">
-                <h2
-                    class="text-xl sm:text-2xl lg:text-3xl text-gray-800 font-semibold mb-10">
-                    <a id="contact">Kontakt</a></h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    <div class="space-y-8">
-                        <div>
-                            <h3 class="flex items-center space-x-2">
-                                <span
-                                    class="shrink-0 w-5 h-5 text-orange-600">
-                                    <svg class="fill-current"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 512 512"
-                                        xml:space="preserve">
-                                        <path
+    <div class="relative bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">
+        <div class="mx-auto max-w-md">
+            <div class="divide-y divide-gray-300/50">
+                <!-- aadress -->
+                <section class="w-full p-2 max-w-7xl mx-auto">
+                    <h2 class="text-xl sm:text-2xl lg:text-3xl text-gray-800 font-semibold mb-10">
+                        <a id="contact">Kontakt</a>
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <div class="space-y-8">
+                            <div>
+                                <h3 class="flex items-center space-x-2">
+                                    <span class="shrink-0 w-5 h-5 text-orange-600">
+                                        <svg class="fill-current"
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             viewBox="0 0 512 512"
+                                             xml:space="preserve">
+                                            <path
                                             d="M256 0C149.3 0 64 85.3 64 192c0 36.9 11 65.4 30.1 94.3l141.7 215c4.3 6.5 11.7 10.7 20.2 10.7s16-4.3 20.2-10.7l141.7-215C437 257.4 448 228.9 448 192 448 85.3 362.7 0 256 0zm0 298.6c-58.9 0-106.7-47.8-106.7-106.8S197.1 85 256 85c58.9 0 106.7 47.8 106.7 106.8S314.9 298.6 256 298.6z" />
-                                    </svg>
-                                </span>
-                                <span
-                                    class="text-lg font-semibold text-gray-700">Remoreks
+                                        </svg>
+                                    </span>
+                                    <span class="text-lg font-semibold text-gray-700">Remoreks
                                     OÜ</span>
-                            </h3>
-                            <p
-                                class="text-base text-gray-600 ml-8 mt-3">
-                                IBAN: EE932200221045380506
-                            </p>
-                            <p
-                                class="text-base text-gray-600 ml-8 mt-3">
-                                Segu 5<br>Saue, 76505 Harju
-                                maakond</p>
-                            <p
-                                class="text-base text-gray-600 ml-8 mt-3 max-w-prose">
-                                <strong
-                                    class="font-semibold">Telefon</strong>
-
-                                <a href="tel:372-501-0308"
-                                    class="whitespace-nowrap">+372
+                                </h3>
+                                <p class="text-base text-gray-600 ml-8 mt-3">IBAN: EE932200221045380506</p>
+                                <p class="text-base text-gray-600 ml-8 mt-3">
+                                    Segu 5
+                                    <br>
+                                    Saue, 76505 Harju
+                                    maakond
+                                </p>
+                                <p class="text-base text-gray-600 ml-8 mt-3 max-w-prose">
+                                    <strong class="font-semibold">Telefon</strong>
+                                    <a href="tel:372-501-0308" class="whitespace-nowrap">+372
                                     501 0308</a>
-                                <br>
-
-                                <strong
-                                    class="font-semibold">Email</strong>
-                                <a
-                                    href="mailto:remoreks@remoreks.ee">remoreks@remoreks.ee</a>
-                            </p>
-                        </div>
-                        <div>
-                            <h3 class="flex items-center space-x-2">
-                                <span
-                                    class="shrink-0 w-5 h-5 text-orange-600">
-                                    <svg class="fill-current"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 296.23 296.23">
-                                        <path
+                                    <br>
+                                    <strong class="font-semibold">Email</strong>
+                                    <a href="mailto:remoreks@remoreks.ee">remoreks@remoreks.ee</a>
+                                </p>
+                            </div>
+                            <div>
+                                <h3 class="flex items-center space-x-2">
+                                    <span class="shrink-0 w-5 h-5 text-orange-600">
+                                        <svg class="fill-current"
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             viewBox="0 0 296.23 296.23">
+                                            <path
                                             d="M167.36 48V25h10.5a12.5 12.5 0 0 0 0-25h-59.5a12.5 12.5 0 0 0 0 25h10.5v23c-59.74 9.29-105.6 61.07-105.6 123.37 0 68.85 56 124.86 124.85 124.86s124.86-56.01 124.86-124.86c0-62.3-45.87-114.08-105.6-123.37zm80.2 114.33a8.3 8.3 0 0 1-8.26 9.04h-82.9a8.3 8.3 0 0 1-8.29-8.29v-82.9a8.3 8.3 0 0 1 9.05-8.26c47.86 4.32 86.08 42.55 90.4 90.4z" />
-                                    </svg>
-                                </span>
-                                <span
-                                    class="text-lg font-semibold text-gray-700">Avatud
-                                </span>
-                            </h3>
-                            <p
-                                class="text-base text-gray-600 ml-8 mt-3">
-                                <strong
-                                    class="font-semibold">esmaspäev
-                                    - reede</strong> 9:00 -
-                                17:00
-                                <br>
-                                <strong class="font-semibold">laupäev
-                                </strong> 9:00 -
-                                14:00
-
-                        </div>
-                    </div>
-                    <div>
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2035.8476938719812!2d24.57009111535396!3d59.31880018165513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4692bef90aee945d%3A0xd86ac58016a7e669!2sRemoreks%20O%C3%9C%20-%20BMW%20Lammutuskoda!5e0!3m2!1sen!2sru!4v1665247862278!5m2!1sen!2sru"
-                            class="w-full aspect-video saturate-50 shadow-2xl"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        </svg>
+                                    </span>
+                                    <span class="text-lg font-semibold text-gray-700">Avatud</span>
+                                </h3>
+                                <p class="text-base text-gray-600 ml-8 mt-3">
+                                    <strong class="font-semibold">esmaspäev
+                                        - reede</strong> 9:00 -
+                                        17:00
+                                        <br>
+                                        <strong class="font-semibold">laupäev</strong> 9:00 -
+                                        14:00
+                                    </div>
+                                </div>
+                                <div>
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2035.8476938719812!2d24.57009111535396!3d59.31880018165513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4692bef90aee945d%3A0xd86ac58016a7e669!2sRemoreks%20O%C3%9C%20-%20BMW%20Lammutuskoda!5e0!3m2!1sen!2sru!4v1665247862278!5m2!1sen!2sru"
+                                            class="w-full aspect-video saturate-50 shadow-2xl"
+                                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+                        </section>
                     </div>
                 </div>
-            </section>
-        </div>
-    </div>
-</div>
-
-{% endblock content %}
+            </div>
+        {% endblock content %}
