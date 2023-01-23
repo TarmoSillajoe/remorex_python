@@ -133,11 +133,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
+# https://flowbite.com/docs/getting-started/django/
+STATICFILES_FINDERS = ("compressor.finders.CompressorFinder",)
+
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
 COMPRESS_ROOT = BASE_DIR / "static"
-COMPRESS_ENABLED = False
+COMPRESS_ENABLED = True
 
 if not DEBUG:
     STATIC_ROOT = BASE_DIR / "staticfiles"
@@ -145,8 +148,6 @@ if not DEBUG:
     # STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
     # STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 
-# https://flowbite.com/docs/getting-started/django/
-STATICFILES_FINDERS = ("compressor.finders.CompressorFinder",)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
