@@ -2,21 +2,17 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible"
-        content="IE=edge">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-    <title>
-        {% block title %}{% endblock %}
-    </title>
-    {% compress css %}
-    <link rel="stylesheet"
-        href="{% static 'src/output.css' %}">
-    {% endcompress %}
-    <script>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            {% block title %}{% endblock %}
+        </title>
+        {% compress css %}
+            <link rel="stylesheet" href="{%  static 'src/output.css' %}">
+        {% endcompress %}
+        <script>
         // On page load or when changing themes, best to add inline in `head` to avoid FOUC
         if (localStorage.getItem('color-theme') === 'dark' || (!(
             'color-theme' in localStorage) && window
@@ -26,177 +22,176 @@
         } else {
             document.documentElement.classList.remove('dark')
         }
-    </script>
-    <script src="https://unpkg.com/htmx.org@1.8.4"
-        integrity="sha384-wg5Y/JwF7VxGk4zLsJEcAojRtlVp1FKKdGy1qN+OMtdq72WRvX/EdRdqg/LOhYeV"
-        crossorigin="anonymous"></script>
-</head>
-
-<body class="bg-green-100 dark:bg-violet-800">
-    <nav
-        class="bg-green-50 border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
-        <div
-            class="container flex flex-wrap justify-between items-center mx-auto">
-            <a href="{% url 'home' %}"
-                class="flex items-center">
-                <svg width="115.000000pt"
-                    height="18.000000pt"
-                    id="theme-toggle-dark-logo"
-                    class="mr-3 h-6 sm:h-9"
-                    preserveAspectRatio="xMidYMid meet"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
+        </script>
+        <script src="https://unpkg.com/htmx.org@1.8.4" integrity="sha384-wg5Y/JwF7VxGk4zLsJEcAojRtlVp1FKKdGy1qN+OMtdq72WRvX/EdRdqg/LOhYeV" crossorigin="anonymous"></script>
+    </head>
+    <body class="bg-green-100 dark:bg-violet-800">
+        <nav class="bg-green-50 border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
+            <div class="container flex flex-wrap justify-between items-center mx-auto">
+                <a href="{% url 'home' %}" class="flex items-center">
+                    <svg width="115.000000pt"
+                         height="18.000000pt"
+                         id="theme-toggle-dark-logo"
+                         class="mr-3 h-6 sm:h-9"
+                         preserveAspectRatio="xMidYMid meet"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path
                         d="M1.33334 2.53333C1.33334 4.13333 2.66667 4.66667 6 4.66667C8.53334 4.66667 10.6667 5.2 10.6667 6C10.6667 6.66667 8.53334 7.33333 6 7.33333C2.53334 7.33333 1.33334 7.86667 1.2 9.6C1.2 10.9333 0.933337 13.3333 0.800003 14.9333C0.533337 17.3333 1.06667 18 3.73334 18C6.26667 18 6.8 17.4667 6.26667 15.3333C5.33334 11.8667 7.46667 11.8667 9.6 15.3333C10.5333 16.8 12.6667 18 14.5333 18C17.6 18 17.6 17.8667 15.4667 14.6667C13.7333 12 13.6 10.9333 14.9333 8.66667C17.7333 4.4 14.8 1.46667 7.46667 0.933332C2.66667 0.666666 1.33334 0.933332 1.33334 2.53333Z"
                         fill="#4F4F4F" />
-                    <path
+                        <path
                         d="M19.6 1.46667C19.0667 2 18.6667 6 18.6667 10.2667V18H26C31.0667 18 33.3333 17.4667 33.3333 16.2667C33.3333 15.3333 31.7333 14.4 29.7333 14.2667C24.2667 13.8667 22.5333 11.3333 27.7333 11.3333C30.6667 11.3333 32 10.6667 32 9.33333C32 8 30.6667 7.33333 27.8667 7.33333C25.6 7.33333 24.1333 6.8 24.6667 6C25.0667 5.2 27.3333 4.66667 29.4667 4.66667C32.1333 4.66667 33.3333 4.13333 33.0667 2.93333C32.4 1.2 21.2 -9.38773e-07 19.6 1.46667Z"
                         fill="#4F4F4F" />
-                    <path
+                        <path
                         d="M36.9333 1.46667C36.4 2 36 6 36 10.2667C36 16.1333 36.5333 18 37.8667 18C39.0667 18 40 16.2667 40.4 13.6L40.8 9.33333L42 13.7333C43.3333 19.4667 46.9333 18.9333 48.1333 12.9333C49.2 7.46667 51.0667 5.46667 50.6667 10C50.1333 16.1333 50.6667 18 52.6667 18C54.4 18 54.6667 16.4 54.4 9.6C54 1.86667 53.8667 1.33333 50.8 1.33333C48.1333 1.33333 47.2 2.26667 46.2667 6L44.9333 10.6667L43.3333 6C41.8667 1.6 38.9333 -0.533334 36.9333 1.46667Z"
                         fill="#4F4F4F" />
-                    <path
+                        <path
                         d="M60.2667 2.8C58.6667 3.86666 57.3333 5.73333 57.3333 6.8C57.3333 9.46666 61.3333 9.2 63.3333 6.4C65.0667 4.13333 65.2 4.13333 67.7333 6.53333C69.2 7.86666 71.6 8.66666 72.9333 8.4C75.0667 8 74.9333 7.46666 71.7333 4.26666C67.6 0.13333 64.5333 -0.26667 60.2667 2.8Z"
                         fill="#4F4F4F" />
-                    <path
+                        <path
                         d="M76.9333 2.26667C75.2 3.33333 77.2 4.26667 82.6667 4.93333C87.3333 5.46667 86.2667 7.86667 81.2 8.66667C77.4667 9.2 76.8 10 76.4 13.6C75.8667 17.3333 76.2667 18 78.5333 18C80.4 18 81.3333 17.2 81.3333 15.4667C81.3333 11.3333 83.8667 10.8 85.6 14.5333C86.5333 16.8 88.1333 18 90.2667 18C93.3333 18 93.3333 17.8667 91.2 14.5333C89.4667 12 89.3333 10.8 90.5333 9.6C92.8 7.33333 92.2667 4.66667 89.7333 4.66667C87.8667 4.66667 87.7333 4.4 89.2 3.46667C90.4 2.66667 88.9333 2.13333 84.8 1.73333C81.3333 1.46667 77.7333 1.73333 76.9333 2.26667Z"
                         fill="#4F4F4F" />
-                    <path
+                        <path
                         d="M94.6667 10V18H101.333C105.067 18 108 17.3333 108 16.6667C108 15.8667 106.267 15.3333 104 15.3333C101.333 15.3333 100 14.6667 100 13.3333C100 12 101.333 11.3333 104 11.3333C106.267 11.3333 108 10.6667 108 10C108 9.2 106.533 8.66667 104.8 8.66667C102.933 8.66667 101.067 8 100.667 7.33333C100.133 6.53333 101.6 6 103.867 6C106.667 6 108 5.33333 108 4C108 2.53333 106.4 2 101.333 2H94.6667V10Z"
                         fill="#4F4F4F" />
-                    <path
+                        <path
                         d="M110.933 10C110.533 17.2 110.8 18 113.067 18C114.533 18 116 16.8 116.4 15.3333C117.333 12 119.6 11.8667 120.667 15.2C121.067 16.5333 122.933 18 124.667 18.4C128.667 19.0667 128.8 18.8 125.2 13.0667L122.4 8.53333L125.467 5.2L128.4 2H125.333C123.6 2 120.8 3.33333 119.067 4.93333L116 7.73333V4.93333C116 3.06666 115.2 2 113.6 2C111.733 2 111.2 3.33333 110.933 10Z"
                         fill="#4F4F4F" />
-                    <path
+                        <path
                         d="M132.667 3.06666C132 3.59999 131.2 5.33333 130.933 6.79999C130.667 8.93333 131.6 9.99999 134.667 11.0667C138.8 12.5333 140.133 15.3333 136.667 15.3333C135.6 15.3333 134.667 14.6667 134.667 14C134.667 13.2 133.467 12.6667 132 12.6667C128.8 12.6667 128.533 14.4 131.333 16.6667C134 18.9333 141.467 18.6667 142.8 16.4C144.8 13.3333 144.133 11.6 140 9.06666C137.867 7.86666 136 6.26666 136 5.59999C136 4.93333 136.933 5.06666 138 5.99999C139.067 6.93333 141.067 7.19999 142.267 6.66666C144.533 5.86666 144.533 5.73333 142.133 3.86666C139.333 1.86666 134.8 1.46666 132.667 3.06666Z"
                         fill="#4F4F4F" />
-                    <path
+                        <path
                         d="M57.3333 13.0667C57.3333 16.1333 60.4 18 65.3333 18C70.2667 18 73.3333 16.1333 73.3333 13.2C73.3333 11.4667 70.1333 11.4667 68.5333 13.0667C67.0667 14.5333 62.6667 14.1333 62.6667 12.6667C62.6667 11.8667 61.4667 11.3333 60 11.3333C58.5333 11.3333 57.3333 12.1333 57.3333 13.0667Z"
                         fill="#4F4F4F" />
-                </svg>
-                <svg width="115.000000pt"
-                    height="18.000000pt"
-                    id="theme-toggle-light-logo"
-                    class="mr-3 h-6 sm:h-9 hidden"
-                    preserveAspectRatio="xMidYMid meet"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
+                    </svg>
+                    <svg width="115.000000pt"
+                         height="18.000000pt"
+                         id="theme-toggle-light-logo"
+                         class="mr-3 h-6 sm:h-9 hidden"
+                         preserveAspectRatio="xMidYMid meet"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path
                         d="M1.33334 2.53333C1.33334 4.13333 2.66667 4.66667 6 4.66667C8.53334 4.66667 10.6667 5.2 10.6667 6C10.6667 6.66667 8.53334 7.33333 6 7.33333C2.53334 7.33333 1.33334 7.86667 1.2 9.6C1.2 10.9333 0.933337 13.3333 0.800003 14.9333C0.533337 17.3333 1.06667 18 3.73334 18C6.26667 18 6.8 17.4667 6.26667 15.3333C5.33334 11.8667 7.46667 11.8667 9.6 15.3333C10.5333 16.8 12.6667 18 14.5333 18C17.6 18 17.6 17.8667 15.4667 14.6667C13.7333 12 13.6 10.9333 14.9333 8.66667C17.7333 4.4 14.8 1.46667 7.46667 0.933332C2.66667 0.666666 1.33334 0.933332 1.33334 2.53333Z"
-                        fill="#E0E0E0"></path>
-                    <path
+                        fill="#E0E0E0">
+                        </path>
+                        <path
                         d="M19.6 1.46667C19.0667 2 18.6667 6 18.6667 10.2667V18H26C31.0667 18 33.3333 17.4667 33.3333 16.2667C33.3333 15.3333 31.7333 14.4 29.7333 14.2667C24.2667 13.8667 22.5333 11.3333 27.7333 11.3333C30.6667 11.3333 32 10.6667 32 9.33333C32 8 30.6667 7.33333 27.8667 7.33333C25.6 7.33333 24.1333 6.8 24.6667 6C25.0667 5.2 27.3333 4.66667 29.4667 4.66667C32.1333 4.66667 33.3333 4.13333 33.0667 2.93333C32.4 1.2 21.2 -9.38773e-07 19.6 1.46667Z"
-                        fill="#E0E0E0"></path>
-                    <path
+                        fill="#E0E0E0">
+                        </path>
+                        <path
                         d="M36.9333 1.46667C36.4 2 36 6 36 10.2667C36 16.1333 36.5333 18 37.8667 18C39.0667 18 40 16.2667 40.4 13.6L40.8 9.33333L42 13.7333C43.3333 19.4667 46.9333 18.9333 48.1333 12.9333C49.2 7.46667 51.0667 5.46667 50.6667 10C50.1333 16.1333 50.6667 18 52.6667 18C54.4 18 54.6667 16.4 54.4 9.6C54 1.86667 53.8667 1.33333 50.8 1.33333C48.1333 1.33333 47.2 2.26667 46.2667 6L44.9333 10.6667L43.3333 6C41.8667 1.6 38.9333 -0.533334 36.9333 1.46667Z"
-                        fill="#E0E0E0"></path>
-                    <path
+                        fill="#E0E0E0">
+                        </path>
+                        <path
                         d="M60.2667 2.8C58.6667 3.86666 57.3333 5.73333 57.3333 6.8C57.3333 9.46666 61.3333 9.2 63.3333 6.4C65.0667 4.13333 65.2 4.13333 67.7333 6.53333C69.2 7.86666 71.6 8.66666 72.9333 8.4C75.0667 8 74.9333 7.46666 71.7333 4.26666C67.6 0.13333 64.5333 -0.26667 60.2667 2.8Z"
-                        fill="#E0E0E0"></path>
-                    <path
+                        fill="#E0E0E0">
+                        </path>
+                        <path
                         d="M76.9333 2.26667C75.2 3.33333 77.2 4.26667 82.6667 4.93333C87.3333 5.46667 86.2667 7.86667 81.2 8.66667C77.4667 9.2 76.8 10 76.4 13.6C75.8667 17.3333 76.2667 18 78.5333 18C80.4 18 81.3333 17.2 81.3333 15.4667C81.3333 11.3333 83.8667 10.8 85.6 14.5333C86.5333 16.8 88.1333 18 90.2667 18C93.3333 18 93.3333 17.8667 91.2 14.5333C89.4667 12 89.3333 10.8 90.5333 9.6C92.8 7.33333 92.2667 4.66667 89.7333 4.66667C87.8667 4.66667 87.7333 4.4 89.2 3.46667C90.4 2.66667 88.9333 2.13333 84.8 1.73333C81.3333 1.46667 77.7333 1.73333 76.9333 2.26667Z"
-                        fill="#E0E0E0"></path>
-                    <path
+                        fill="#E0E0E0">
+                        </path>
+                        <path
                         d="M94.6667 10V18H101.333C105.067 18 108 17.3333 108 16.6667C108 15.8667 106.267 15.3333 104 15.3333C101.333 15.3333 100 14.6667 100 13.3333C100 12 101.333 11.3333 104 11.3333C106.267 11.3333 108 10.6667 108 10C108 9.2 106.533 8.66667 104.8 8.66667C102.933 8.66667 101.067 8 100.667 7.33333C100.133 6.53333 101.6 6 103.867 6C106.667 6 108 5.33333 108 4C108 2.53333 106.4 2 101.333 2H94.6667V10Z"
-                        fill="#E0E0E0"></path>
-                    <path
+                        fill="#E0E0E0">
+                        </path>
+                        <path
                         d="M110.933 10C110.533 17.2 110.8 18 113.067 18C114.533 18 116 16.8 116.4 15.3333C117.333 12 119.6 11.8667 120.667 15.2C121.067 16.5333 122.933 18 124.667 18.4C128.667 19.0667 128.8 18.8 125.2 13.0667L122.4 8.53333L125.467 5.2L128.4 2H125.333C123.6 2 120.8 3.33333 119.067 4.93333L116 7.73333V4.93333C116 3.06666 115.2 2 113.6 2C111.733 2 111.2 3.33333 110.933 10Z"
-                        fill="#E0E0E0"></path>
-                    <path
+                        fill="#E0E0E0">
+                        </path>
+                        <path
                         d="M132.667 3.06666C132 3.59999 131.2 5.33333 130.933 6.79999C130.667 8.93333 131.6 9.99999 134.667 11.0667C138.8 12.5333 140.133 15.3333 136.667 15.3333C135.6 15.3333 134.667 14.6667 134.667 14C134.667 13.2 133.467 12.6667 132 12.6667C128.8 12.6667 128.533 14.4 131.333 16.6667C134 18.9333 141.467 18.6667 142.8 16.4C144.8 13.3333 144.133 11.6 140 9.06666C137.867 7.86666 136 6.26666 136 5.59999C136 4.93333 136.933 5.06666 138 5.99999C139.067 6.93333 141.067 7.19999 142.267 6.66666C144.533 5.86666 144.533 5.73333 142.133 3.86666C139.333 1.86666 134.8 1.46666 132.667 3.06666Z"
-                        fill="#E0E0E0"></path>
-                    <path
+                        fill="#E0E0E0">
+                        </path>
+                        <path
                         d="M57.3333 13.0667C57.3333 16.1333 60.4 18 65.3333 18C70.2667 18 73.3333 16.1333 73.3333 13.2C73.3333 11.4667 70.1333 11.4667 68.5333 13.0667C67.0667 14.5333 62.6667 14.1333 62.6667 12.6667C62.6667 11.8667 61.4667 11.3333 60 11.3333C58.5333 11.3333 57.3333 12.1333 57.3333 13.0667Z"
-                        fill="#E0E0E0"></path>
-                </svg>
-            </a>
-            <button data-collapse-toggle="mobile-menu"
-                type="button"
-                class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                aria-controls="mobile-menu"
-                aria-expanded="false">
-                <span class="sr-only">Open main menu</span>
-                <svg class="w-6 h-6"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd"
+                        fill="#E0E0E0">
+                        </path>
+                    </svg>
+                </a>
+                <button data-collapse-toggle="mobile-menu"
+                        type="button"
+                        class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="mobile-menu"
+                        aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-6 h-6"
+                         fill="currentColor"
+                         viewBox="0 0 20 20"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
                         d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
                         clip-rule="evenodd">
-                    </path>
-                </svg>
-                <svg class="hidden w-6 h-6"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd"
+                        </path>
+                    </svg>
+                    <svg class="hidden w-6 h-6"
+                         fill="currentColor"
+                         viewBox="0 0 20 20"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
                         d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
                         clip-rule="evenodd">
-                    </path>
-                </svg>
-            </button>
-            <div class="hidden w-full md:block md:w-auto"
-                id="mobile-menu">
-                <ul
-                    class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-                    <li>
-                        <a href="{% url 'home' %}"
-                            class="block py-2 pr-4 pl-3 text-white bg-green-700 rounded md:bg-transparent md:text-green-700 md:p-0 dark:text-white"
-                            aria-current="page">Home</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'assembly_groups' %}"
-                            class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Parts</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'contact' %}"
-                            class="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
-                    </li>
-                    <li>
-                        <button id="theme-toggle"
-                            type="button"
-                            class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
-                            <svg id="theme-toggle-dark-icon"
-                                class="hidden w-5 h-5"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z">
-                                </path>
-                            </svg>
-                            <svg id="theme-toggle-light-icon"
-                                class="hidden w-5 h-5"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
+                        </path>
+                    </svg>
+                </button>
+                <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
+                    <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+                        <li>
+                            <a href="{% url 'home' %}"
+                               class="block py-2 pr-4 pl-3 text-white bg-green-700 rounded md:bg-transparent md:text-green-700 md:p-0 dark:text-white"
+                               aria-current="page">Home</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'assembly_groups' %}"
+                               class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Parts</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                               class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'contact' %}"
+                               class="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+                        </li>
+                        <li>
+                            <button id="theme-toggle"
+                                    type="button"
+                                    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                                <svg id="theme-toggle-dark-icon"
+                                     class="hidden w-5 h-5"
+                                     fill="currentColor"
+                                     viewBox="0 0 20 20"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                    d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                                </svg>
+                                <svg id="theme-toggle-light-icon"
+                                     class="hidden w-5 h-5"
+                                     fill="currentColor"
+                                     viewBox="0 0 20 20"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path
                                     d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
                                     fill-rule="evenodd"
                                     clip-rule="evenodd">
-                                </path>
-                            </svg>
-                        </button>
-                    </li>
-                </ul>
+                                    </path>
+                                </svg>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </nav>
+        <div class="container mx-auto mt-4">
+            {% block content %}
+            {% endblock content %}
         </div>
-    </nav>
-    <div class="container mx-auto mt-4">
-        {% block content %}
-        {% endblock content %}
-    </div>
-    <script src="node_modules/flowbite/dist/flowbite.js"></script>
-    <script src="{% static 'js/script.js' %}"></script>
-    <script>
+        <script src="{% static 'js/flowbite.js' %}"></script>
+        <script src="{% static 'js/script.js' %}"></script>
+        <script>
         document.body.addEventListener('htmx:configRequest', (
             event) => {
             event.detail.headers['X-CSRFToken'] =
                 '{{ csrf_token }}';
         })
-    </script>
-</body>
-
+        </script>
+    </body>
 </html>
