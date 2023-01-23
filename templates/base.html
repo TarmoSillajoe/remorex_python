@@ -1,4 +1,5 @@
 {% load static %}
+{% load compress %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,7 +9,9 @@
         <title>
             {% block title %}{% endblock %}
         </title>
-        <link rel="stylesheet" href="{%  static 'src/output.css' %}">
+        {% compress css %}
+            <link rel="stylesheet" href="{%  static 'src/output.css' %}">
+        {% endcompress %}
         <script>
         // On page load or when changing themes, best to add inline in `head` to avoid FOUC
         if (localStorage.getItem('color-theme') === 'dark' || (!(

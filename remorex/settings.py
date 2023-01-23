@@ -137,7 +137,7 @@ STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
 COMPRESS_ROOT = BASE_DIR / "static"
-COMPRESS_ENABLED = False
+COMPRESS_ENABLED = True
 
 if not DEBUG:
     STATIC_ROOT = BASE_DIR / "staticfiles"
