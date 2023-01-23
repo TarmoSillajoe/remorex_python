@@ -145,11 +145,8 @@ if not DEBUG:
     # STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
     # STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 
-STATICFILES_FINDERS = [
-    "django.contrib.staticfiles.finders.FileSystemFinder",
-    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
-    "compressor.finders.CompressorFinder",
-]
+# https://flowbite.com/docs/getting-started/django/
+STATICFILES_FINDERS = ("compressor.finders.CompressorFinder",)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
