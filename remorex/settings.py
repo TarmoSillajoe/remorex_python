@@ -136,6 +136,9 @@ USE_TZ = True
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
+COMPRESS_ROOT = BASE_DIR / "static"
+COMPRESS_ENABLED = False
+
 if not DEBUG:
     STATIC_ROOT = BASE_DIR / "staticfiles"
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
@@ -158,5 +161,3 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
 MEDIA_ROOT = BASE_DIR / "media"
-COMPRESS_ROOT = BASE_DIR / "static"
-COMPRESS_ENABLED = True
