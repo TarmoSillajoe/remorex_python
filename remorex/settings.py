@@ -177,7 +177,7 @@ if os.getenv("USE_S3"):
     AWS_DEFAULT_ACL = None
 
     # http://bucket-name.s3-website.Region.amazonaws.com/object-name
-    AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+    AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.eu-north-1.amazonaws.com"
 
     AWS_S3_OBJECT_PARAMETERS = {"CacheControl": "max-age=86400"}
 
