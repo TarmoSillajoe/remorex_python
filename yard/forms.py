@@ -17,6 +17,7 @@ class PartForm(forms.ModelForm):
 
 
 class QueryForm(forms.Form):
-    from_email = forms.EmailField(required=False)
+    email = forms.EmailField(required=False)
+    phone = forms.CharField(max_length=20)
     subject = forms.CharField(required=True)
     message = forms.CharField(widget=forms.Textarea, required=True)

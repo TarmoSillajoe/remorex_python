@@ -10,10 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
+from dotenv import load_dotenv
 from pathlib import Path
 
 import dj_database_url
 from django.utils.translation import gettext_lazy as _
+
+load_dotenv()
 
 SECRET_KEY = os.environ.get(
     "SECRET_KEY",
@@ -203,5 +206,12 @@ LOCALE_PATHS = [
     BASE_DIR / "locale",
 ]
 
-DEFAULT_FROM_EMAIL = "tsillajoe@gmail.com"
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+DEFAULT_FROM_EMAIL = "tarmo.sillajoe@outlook.com"
+EMAIL_HOST = "smtp.sendgrid.net"
+EMAIL_HOST_USER = "apikey"
+EMAIL_HOST_PASSWORD = str(os.getenv("SENDGRID_PASSWORD"))
+
+
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

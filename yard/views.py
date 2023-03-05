@@ -68,10 +68,23 @@ def query_view(request):
         form = QueryForm(request.POST)
         if form.is_valid():
             subject = form.cleaned_data["subject"]
-            from_email = form.cleaned_data["from_email"]
-            message = form.cleaned_data["message"]
+            body = {
+                "phone": form.cleaned_data["phone"],
+                "email": form.cleaned_data["email"],
+                "message": form.cleaned_data["message"],
+            }
+            message = "\n".join(body.values())
+
             try:
-                send_mail(subject, message, from_email, ["admin@example.com"])
+                send_mail(
+                    subject,
+                    message,
+                    from_email="tarmo.sillajoe@outlook.com",
+                    recipient_list=[
+                        "tarmo.sillajoe@outlook.com",
+                        "tsillajoe@gmail.com",
+                    ],
+                )
             except BadHeaderError:
                 return HttpResponse("Invalid header found")
             return redirect("query_success")
