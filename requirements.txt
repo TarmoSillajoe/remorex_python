@@ -24,6 +24,7 @@ django-htmx
 django-phonenumber-field
 django-phonenumbers
 django-storages
+django-widget-tweaks
 executing
 gunicorn
 idna
