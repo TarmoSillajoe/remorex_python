@@ -3,8 +3,8 @@
 {% for part in parts  %}
 <div>{{ part.part_code }}, {{ part.description }}</div>
 <div><img src="{{ part.image.url }}"
-                alt="partno {{ part.part_code }}"></div>
+        alt="partno {{ part.part_code }}"></div>
 {% endfor %}
 {% else %}
-<div>no items</div>
+<div>Selles grupis ei ole varuosasid</div>
 {% endif %}

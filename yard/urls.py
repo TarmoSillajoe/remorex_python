@@ -8,6 +8,8 @@ from .views import (
     assembly_groups_view,
     parts_for_the_assembly_group,
     part_delete_view,
+    query_view,
+    query_success_view,
 )
 
 urlpatterns = [
@@ -15,6 +17,8 @@ urlpatterns = [
     path(
         "contact/", TemplateView.as_view(template_name="contact.html"), name="contact"
     ),
+    path("query/", query_view, name="query"),
+    path("querysuccess/", query_success_view, name="query_success"),
     path("part/<int:part_id>/", part_detail_view, name="part_detail"),
     path("parts/", assembly_groups_view, name="assembly_groups"),
     path(

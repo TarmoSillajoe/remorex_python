@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Part, AssemblyGroup
-from .forms import PartForm
+from .forms import PartForm, QueryForm
 from django.http import HttpResponse, HttpResponseRedirect
+from django.core.mail import send_mail, BadHeaderError
 
 
 def assembly_groups_view(request):
@@ -58,3 +59,24 @@ def part_edit_view(request, part_id):
     else:
         form = PartForm(instance=part)
     return render(request, "yard/part_edit.html", {"form": form})
+
+
+def query_view(request):
+    if request.method == "GET":
+        form = QueryForm()
+    else:
+        form = QueryForm(request.POST)
+        if form.is_valid():
+            subject = form.cleaned_data["subject"]
+            from_email = form.cleaned_data["from_email"]
+            message = form.cleaned_data["message"]
+            try:
+                send_mail(subject, message, from_email, ["admin@example.com"])
+            except BadHeaderError:
+                return HttpResponse("Invalid header found")
+            return redirect("query_success")
+    return render(request, "yard/query.html", {"form": form})
+
+
+def query_success_view(request):
+    return HttpResponse("Päring saadetud. Täname.")

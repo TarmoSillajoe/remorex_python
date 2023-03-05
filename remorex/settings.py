@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 
 import dj_database_url
+from django.utils.translation import gettext_lazy as _
 
 SECRET_KEY = os.environ.get(
     "SECRET_KEY",
@@ -52,12 +53,14 @@ INSTALLED_APPS = [
     "posts",
     "compressor",
     "storages",
+    "coverage",
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -122,7 +125,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+# LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "et"
+# LANGUAGE_CODE = "ru"
+# LANGUAGE_CODE = "de"
 
 TIME_ZONE = "UTC"
 
@@ -149,9 +155,7 @@ COMPRESS_ENABLED = True
 
 if not DEBUG:
     STATIC_ROOT = BASE_DIR / "staticfiles"
-    # STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
     STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
-    # STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 
 
 # Default primary key field type
@@ -187,3 +191,17 @@ if os.getenv("USE_S3"):
     DEFAULT_FILE_STORAGE = (
         "storages.backends.s3boto3.S3Boto3Storage"  # /remorex/storage_backends.py
     )
+
+LANGUAGES = (
+    ("en", _("English")),
+    ("et", _("Estonian")),
+    ("de", _("German")),
+    ("ru", _("Russian")),
+)
+
+LOCALE_PATHS = [
+    BASE_DIR / "locale",
+]
+
+DEFAULT_FROM_EMAIL = "tsillajoe@gmail.com"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"

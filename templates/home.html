@@ -1,12 +1,12 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% block title %}
 Home
 {% endblock  %}
 {% block content %}
 
-<p
-    class="mb-6 text-4xl text-gray-800 dark:text-gray-400 text-justify">
-    <span class="text-5xl">
+<p class="mb-6 text-xl text-gray-800 dark:text-gray-400 text-justify">
+    <span class="text-2xl">
         OÜ Remoreks
     </span>on asutatud 1997. aastal ja on Eestis ainulaadne BMW
     lammutusele ja varuosade müügile spetsialiseerunud koda.
@@ -21,7 +21,7 @@ Home
     <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
         <h2
             class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-800 dark:text-gray-400">
-            Kirjuta meile</h2>
+            {% translate "Võta ühendust" noop %}</h2>
         <p
             class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
             Soovid pärida varuosa või muud informatsiooni? Kirjuta
