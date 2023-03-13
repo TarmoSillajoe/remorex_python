@@ -2,11 +2,11 @@
 {% if parts %}
 {% for part in parts  %}
 
+<div hx-get="{% url 'part_card' part.id %}"
+    hx-trigger="load"
+    hx-swap="outerHTML"
+    class="md:flex-rows">
 
-<div>{{ part.part_code }}, {{ part.description }}
-</div>
-<div><img src="{{ part.image.url }}"
-                alt="partno {{ part.part_code }}">
 </div>
 
 
