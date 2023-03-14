@@ -20,8 +20,9 @@ load_dotenv()
 
 SECRET_KEY = os.environ.get(
     "SECRET_KEY",
-    default="django-insecure-*1_lcvqs=v^09c121wh2sz(cy=ei67fof(fz!z_fqkge-1l6a0",
+    default=str(os.getenv("SECRET_KEY")),
 )
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -35,7 +36,7 @@ DEBUG = "RENDER" not in os.environ
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".fly.dev", "remorex.onrender.com"]
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
 if RENDER_EXTERNAL_HOSTNAME:
@@ -101,7 +102,7 @@ WSGI_APPLICATION = "remorex.wsgi.application"
 
 DATABASES = {
     "default": dj_database_url.config(
-        default="postgresql://postgres:mysecret@localhost:5432/remoreks",
+        default=str(os.getenv("DATABASE_URI")),
         conn_max_age=600,
     )
 }
