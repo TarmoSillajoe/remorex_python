@@ -10,6 +10,7 @@ from .views import (
     part_delete_view,
     query_view,
     query_success_view,
+    part_card_view,
 )
 
 urlpatterns = [
@@ -20,6 +21,7 @@ urlpatterns = [
     path("query/", query_view, name="query"),
     path("querysuccess/", query_success_view, name="query_success"),
     path("part/<int:part_id>/", part_detail_view, name="part_detail"),
+    path("partcard/<int:part_id>/", part_card_view, name="part_card"),
     path("parts/", assembly_groups_view, name="assembly_groups"),
     path(
         "parts/group/<int:assembly_group_id>/",

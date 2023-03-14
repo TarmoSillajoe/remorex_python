@@ -25,6 +25,12 @@ def part_detail_view(request, part_id):
     return render(request, "yard/part_detail.html", {"part": part, "user": user})
 
 
+def part_card_view(request, part_id):
+    user = request.user
+    part = get_object_or_404(Part, id=part_id)
+    return render(request, "yard/part_card.html", {"part": part, "user": user})
+
+
 @login_required
 def part_create_view(request):
     if request.method == "POST":
