@@ -42,6 +42,7 @@ ALLOWED_HOSTS = [
     ".fly.dev",
     "remorex.onrender.com",
     "remoreks.ee",
+    "*",
 ]
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
