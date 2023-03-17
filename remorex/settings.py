@@ -36,7 +36,13 @@ DEBUG = "RENDER" not in os.environ
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".fly.dev", "remorex.onrender.com"]
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    ".fly.dev",
+    "remorex.onrender.com",
+    "remoreks.ee",
+]
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
 if RENDER_EXTERNAL_HOSTNAME:
