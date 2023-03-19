@@ -85,9 +85,9 @@ def query_view(request):
                 send_mail(
                     subject,
                     message,
-                    from_email="tarmo.sillajoe@outlook.com",
+                    from_email="remoreks@remoreks.ee",
                     recipient_list=[
-                        "tarmo.sillajoe@outlook.com",
+                        "remoreks@remoreks.ee",
                         "tsillajoe@gmail.com",
                     ],
                 )

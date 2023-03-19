@@ -216,14 +216,15 @@ LOCALE_PATHS = [
 ]
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-DEFAULT_FROM_EMAIL = "tarmo.sillajoe@outlook.com"
-EMAIL_HOST = "smtp.sendgrid.net"
-EMAIL_HOST_USER = "apikey"
+DEFAULT_FROM_EMAIL = "remoreks@remoreks.ee"
+EMAIL_HOST = "csmtp.telia.ee"
 
 if not DEBUG:
-    EMAIL_HOST_PASSWORD = os.environ.get("SENDGRID_PASSWORD")
+    EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+    EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
 else:
-    EMAIL_HOST_PASSWORD = str(os.getenv("SENDGRID_PASSWORD"))
+    EMAIL_HOST_PASSWORD = str(os.getenv("EMAIL_HOST_PASSWORD"))
+    EMAIL_HOST_USER = str(os.getenv("EMAIL_HOST_USER"))
 
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
