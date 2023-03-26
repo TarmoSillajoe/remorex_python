@@ -1,15 +1,38 @@
-{% extends "base.html" %}
+{% extends "../base.html" %}
+{% load widget_tweaks %}
 {% block title %}
 sign up
 {% endblock title %}
 LogIn
 {% block content %}
 <h2>Login</h2>
-<form class="w-400 mw-full"
-    method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button class="btn btn-primary"
-        type="submit">Log In</button>
-</form>
-{% endblock  %}
+<div class="py-8 lg-py-16 px-4 mx-auto max-w-screen-sm">
+    <form method="POST"
+        class="space-y-8">
+
+        {{ form.non_field_errors }}
+        {% for hidden_field in form.hidden_fields %}
+        {{ hidden_field.errors }}
+        {{ hidden_field }}
+        {% endfor %}
+        {% for field in form.visible_fields %}
+        <div>
+            <label
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field|add_class:'block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light' }}
+            {{ field.errors }}
+            {{ field.help_text }}
+        </div>
+        {% endfor %}
+        <div class="form-actions">
+            <button type="submit"
+                class="py-3 px-5 text-sm font-medium text-center 
+            text-white rounded-lg bg-indigo-700 sm:w-fit 
+            hover:bg-primary-800 focus:ring-4 focus:outline-none 
+            focus:ring-primary-300 dark:indigo-600 dark:hover:bg-primary-700 
+            dark:focus:ring-primary-800">Login</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}
