@@ -9,25 +9,27 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+
 import os
-from dotenv import load_dotenv
 from pathlib import Path
 
 import dj_database_url
+import pymysql
 from django.utils.translation import gettext_lazy as _
+from dotenv import load_dotenv
 
 load_dotenv()
 
 SECRET_KEY = os.environ.get(
     "SECRET_KEY",
-    default=str(os.getenv("SECRET_KEY")),
+    default=os.getenv("SECRET_KEY"),
 )
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DEBUG = "RENDER" not in os.environ
+DEBUG = "zonevs.eu" not in os.environ.get("VS_LOOPBACK_HOST", "")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -37,17 +39,15 @@ DEBUG = "RENDER" not in os.environ
 # SECURITY WARNING: don't run with debug turned on in production!
 
 ALLOWED_HOSTS = [
+    "[fe80::acc8:46ff:fea7:db6e]",
     "localhost",
+    "127.1.151.231",
     "127.0.0.1",
-    ".fly.dev",
-    "remorex.onrender.com",
+    "0.0.0.0",
+    "185.43.106.116",
     "remoreks.ee",
-    "*",
+    "www.remoreks.ee",
 ]
-
-RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
-if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 # Application definition
 
@@ -72,7 +72,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
-    "django.middleware.locale.LocaleMiddleware",
+    "yard.middleware.CustomLocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -109,12 +109,18 @@ WSGI_APPLICATION = "remorex.wsgi.application"
 
 DATABASES = {
     "default": dj_database_url.config(
-        default=str(os.getenv("DATABASE_URI")),
+        os.environ.get("DATABASE_URI"),
+        default=os.getenv("DATABASE_URI"),
         conn_max_age=600,
     )
 }
 
+DATABASES["default"].update(
+    {"OPTIONS": {"init_command": "SET sql_mode='STRICT_TRANS_TABLES'"}}
+)
 
+pymysql.version_info = (1, 4, 6, "final", 0)
+pymysql.install_as_MySQLdb()
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -126,7 +132,7 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
     },
     {
-        "NAME": "django.contrib./.password_validation.CommonPasswordValidator",
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
     },
     {
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
@@ -139,8 +145,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # LANGUAGE_CODE = "en-us"
 LANGUAGE_CODE = "et"
-# LANGUAGE_CODE = "ru"
-# LANGUAGE_CODE = "de"
 
 TIME_ZONE = "UTC"
 
@@ -158,6 +162,7 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
+
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
@@ -205,10 +210,10 @@ if os.getenv("USE_S3"):
     )
 
 LANGUAGES = (
-    ("en", _("English")),
     ("et", _("Estonian")),
-    ("de", _("German")),
     ("ru", _("Russian")),
+    ("en", _("English")),
+    ("de", _("German")),
 )
 
 LOCALE_PATHS = [
@@ -216,15 +221,13 @@ LOCALE_PATHS = [
 ]
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+
 DEFAULT_FROM_EMAIL = "remoreks@remoreks.ee"
-EMAIL_HOST = "csmtp.telia.ee"
 
-if not DEBUG:
-    EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
-    EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
-else:
-    EMAIL_HOST_PASSWORD = str(os.getenv("EMAIL_HOST_PASSWORD"))
-    EMAIL_HOST_USER = str(os.getenv("EMAIL_HOST_USER"))
+EMAIL_HOST = os.getenv("EMAIL_HOST")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
 
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+EMAIL_PORT = 25
+EMAIL_USE_TLS = False
+EMAIL_TIMEOUT = 60

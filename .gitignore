@@ -9,3 +9,5 @@ output.css
 secret_key.txt
 staticfiles/
 .env
+.venv/
+uv.lock
