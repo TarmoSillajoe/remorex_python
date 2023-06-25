@@ -8,4 +8,5 @@ output.css
 **/CACHE/*
 secret_key.txt
 staticfiles/
+locale/
 .env
