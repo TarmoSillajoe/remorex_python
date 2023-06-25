@@ -1,12 +1,12 @@
 *.sqlite3
+*.pyc
+*.mo
 __pycache__/*
 node_modules/*
-*.pyc
 /.vscode
 **/images/*
 output.css
 **/CACHE/*
 secret_key.txt
 staticfiles/
-locale/
 .env
