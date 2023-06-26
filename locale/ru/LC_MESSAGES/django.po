@@ -22,24 +22,24 @@ msgstr ""
 
 #: remorex/settings.py:208
 msgid "English"
-msgstr ""
+msgstr "английский язык"
 
 #: remorex/settings.py:209
 msgid "Estonian"
-msgstr ""
+msgstr "эстонский язык"
 
 #: remorex/settings.py:210
 msgid "German"
-msgstr ""
+msgstr "немецкий язык"
 
 #: remorex/settings.py:211
 msgid "Russian"
-msgstr ""
+msgstr "русский язык"
 
 #: templates/base.html:241
 msgid "Mon-Fri"
-msgstr ""
+msgstr "по рабочим дням"
 
 #: templates/base.html:244
 msgid "Saturday"
-msgstr ""
+msgstr "по субботам"
