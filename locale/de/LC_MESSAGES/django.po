@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-25 19:52+0000\n"
+"POT-Creation-Date: 2023-07-02 19:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,10 +34,34 @@ msgstr "Deutsch"
 msgid "Russian"
 msgstr "Russisch"
 
-#: templates/base.html:241
+#: templates/base.html:129
+msgid "open main memu"
+msgstr ""
+
+#: templates/base.html:238 templates/contact.html:70
+msgid "open"
+msgstr ""
+
+#: templates/base.html:241 templates/contact.html:75
 msgid "Mon-Fri"
 msgstr "Montag-Freitag"
 
-#: templates/base.html:244
+#: templates/base.html:244 templates/contact.html:80
 msgid "Saturday"
 msgstr "Samstag"
+
+#: templates/contact.html:47
+msgid "phone"
+msgstr ""
+
+#: templates/home.html:5
+msgid "Home"
+msgstr ""
+
+#: templates/home.html:12
+msgid "intro"
+msgstr ""
+
+#: templates/home.html:13
+msgid "Autolammutuste Liidu liige"
+msgstr ""
