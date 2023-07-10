@@ -52,16 +52,16 @@ msgstr "Samstag"
 
 #: templates/contact.html:47
 msgid "phone"
-msgstr ""
+msgstr "Telefon"
 
 #: templates/home.html:5
 msgid "Home"
-msgstr ""
+msgstr "Hauptsite"
 
 #: templates/home.html:12
 msgid "intro"
-msgstr ""
+msgstr "Wilkommen auf unsere Seite. Hier findest Du alles für Deinen Bimmer."
 
 #: templates/home.html:13
 msgid "Autolammutuste Liidu liige"
-msgstr ""
+msgstr "Autolammutuste liit "
