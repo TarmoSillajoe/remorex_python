@@ -38,11 +38,11 @@ msgstr "русский язык"
 
 #: templates/base.html:129
 msgid "open main memu"
-msgstr ""
+msgstr "открыть главное меню"
 
 #: templates/base.html:238 templates/contact.html:70
 msgid "open"
-msgstr ""
+msgstr "открыта"
 
 #: templates/base.html:241 templates/contact.html:75
 msgid "Mon-Fri"
@@ -54,16 +54,16 @@ msgstr "по субботам"
 
 #: templates/contact.html:47
 msgid "phone"
-msgstr ""
+msgstr "телефон"
 
 #: templates/home.html:5
 msgid "Home"
-msgstr ""
+msgstr "главная страница"
 
 #: templates/home.html:12
 msgid "intro"
-msgstr ""
+msgstr "была создана в 1997 году"
 
 #: templates/home.html:13
 msgid "Autolammutuste Liidu liige"
-msgstr ""
+msgstr "член ассоциации переработчиков автомобилей"

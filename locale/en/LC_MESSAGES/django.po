@@ -52,15 +52,15 @@ msgstr "Saturday"
 
 #: templates/contact.html:47
 msgid "phone"
-msgstr ""
+msgstr "Phone"
 
 #: templates/home.html:5
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 #: templates/home.html:12
 msgid "intro"
-msgstr ""
+msgstr "established in 1997"
 
 #: templates/home.html:13
 msgid "Autolammutuste Liidu liige"
