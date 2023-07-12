@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.test import TestCase
+from django.urls import reverse
 
 
 class ViewsTestCase(TestCase):
@@ -31,3 +32,12 @@ class ViewsTestCase(TestCase):
     def test_language_using_header(self):
         response = self.client.get("", headers={"accept-language": "et"})
         self.assertContains(response, b"ainulaadne")
+
+    def test_set_language_page_changes_language(self):
+        response = self.client.post(
+            reverse("set_language"), data={"next": "", "language": "et"}
+        )
+        self.assertEqual(response.status_code, 302)
+        response = self.client.get("")
+        decoded_content = response.content.decode("utf-8")
+        self.assertIn("lammutusele", decoded_content)

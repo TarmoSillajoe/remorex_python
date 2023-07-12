@@ -2,6 +2,7 @@ from pathlib import Path
 from django.urls import path
 from django.views.generic import TemplateView
 from .views import (
+    homeview,
     part_detail_view,
     part_create_view,
     part_edit_view,
@@ -14,7 +15,8 @@ from .views import (
 )
 
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="home.html"), name="home"),
+    path("", homeview, name="home"),
+    # path("", TemplateView.as_view(template_name="home.html"), name="home"),
     path(
         "contact/", TemplateView.as_view(template_name="contact.html"), name="contact"
     ),

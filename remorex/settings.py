@@ -139,8 +139,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # LANGUAGE_CODE = "en-us"
 LANGUAGE_CODE = "et"
-# LANGUAGE_CODE = "ru"
-# LANGUAGE_CODE = "de"
 
 TIME_ZONE = "UTC"
 
@@ -205,10 +203,10 @@ if os.getenv("USE_S3"):
     )
 
 LANGUAGES = (
-    ("en", _("English")),
     ("et", _("Estonian")),
-    ("de", _("German")),
     ("ru", _("Russian")),
+    ("en", _("English")),
+    ("de", _("German")),
 )
 
 LOCALE_PATHS = [
