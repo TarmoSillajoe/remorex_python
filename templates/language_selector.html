@@ -1,0 +1,29 @@
+{% load i18n %}
+<form id="language-form"
+    action="{% url 'set_language' %}"
+    method='post'>
+    <input type="hidden"
+        name="next"
+        value="{{ request.path }}">
+    <select id="languages"
+        hx-post="{% url 'set_language' %}"
+        hx-include="#language-form *"
+        hx-target="#language-form"
+        hx-swap="none"
+        name="language"
+        class="bg-gray-50 border border-gray-300 
+        text-gray-900 text-sm rounded-lg focus:ring-blue-500 
+        focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 
+        dark:border-gray-600 dark:placeholder-gray-400 dark:text-white 
+        dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+        <option value="{{ language.code }}"
+            {% if language.code == LANGUAGE_CODE %}selected{% endif %}>
+            {{ language.name_local }} ({{ language.code }})
+        </option>
+        {% endfor %}
+    </select>
+</form>

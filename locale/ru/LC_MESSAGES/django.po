@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-02 19:39+0000\n"
+"POT-Creation-Date: 2023-07-29 05:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,39 +20,43 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: remorex/settings.py:208
-msgid "English"
-msgstr "английский язык"
-
-#: remorex/settings.py:209
+#: remorex/settings.py:207
 msgid "Estonian"
 msgstr "эстонский язык"
+
+#: remorex/settings.py:208
+msgid "Russian"
+msgstr "русский язык"
+
+#: remorex/settings.py:209
+msgid "English"
+msgstr "английский язык"
 
 #: remorex/settings.py:210
 msgid "German"
 msgstr "немецкий язык"
 
-#: remorex/settings.py:211
-msgid "Russian"
-msgstr "русский язык"
-
-#: templates/base.html:129
+#: templates/base.html:83
 msgid "open main memu"
 msgstr "открыть главное меню"
 
-#: templates/base.html:238 templates/contact.html:70
+#: templates/base.html:164 templates/contact.html:71
 msgid "open"
 msgstr "открыта"
 
-#: templates/base.html:241 templates/contact.html:75
+#: templates/base.html:167 templates/contact.html:76
 msgid "Mon-Fri"
 msgstr "по рабочим дням"
 
-#: templates/base.html:244 templates/contact.html:80
+#: templates/base.html:169 templates/contact.html:81
 msgid "Saturday"
 msgstr "по субботам"
 
-#: templates/contact.html:47
+#: templates/contact.html:15
+msgid "Contact"
+msgstr ""
+
+#: templates/contact.html:48
 msgid "phone"
 msgstr "телефон"
 
