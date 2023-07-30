@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-30 16:33+0000\n"
+"POT-Creation-Date: 2023-07-30 17:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,31 +34,31 @@ msgstr "Englisch"
 msgid "German"
 msgstr "Deutsch"
 
-#: templates/base.html:129
+#: templates/base.html:127
 msgid "open main memu"
 msgstr ""
 
-#: templates/base.html:160
+#: templates/base.html:158
 msgid "spare-parts"
 msgstr "Ersatzteile"
 
-#: templates/base.html:164
+#: templates/base.html:162
 msgid "services"
 msgstr "Dienstleistungen"
 
-#: templates/base.html:168 templates/contact.html:4
+#: templates/base.html:166 templates/contact.html:4
 msgid "contact"
 msgstr "Kontakt"
 
-#: templates/base.html:227 templates/contact.html:72
+#: templates/base.html:225 templates/contact.html:72
 msgid "open"
 msgstr "Betriebszeiten"
 
-#: templates/base.html:230 templates/contact.html:77
+#: templates/base.html:228 templates/contact.html:77
 msgid "Mon-Fri"
 msgstr "Mo-Fr"
 
-#: templates/base.html:232 templates/contact.html:82
+#: templates/base.html:230 templates/contact.html:82
 msgid "Saturday"
 msgstr "Samstag"
 

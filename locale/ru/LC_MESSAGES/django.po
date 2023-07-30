@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-30 16:26+0000\n"
+"POT-Creation-Date: 2023-07-30 17:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,31 +36,31 @@ msgstr "английский язык"
 msgid "German"
 msgstr "немецкий язык"
 
-#: templates/base.html:129
+#: templates/base.html:127
 msgid "open main memu"
 msgstr "открыть главное меню"
 
-#: templates/base.html:160
+#: templates/base.html:158
 msgid "spare-parts"
 msgstr "запчасти"
 
-#: templates/base.html:164
+#: templates/base.html:162
 msgid "services"
 msgstr "услуги"
 
-#: templates/base.html:168 templates/contact.html:4
+#: templates/base.html:166 templates/contact.html:4
 msgid "contact"
 msgstr "контакты"
 
-#: templates/base.html:227 templates/contact.html:72
+#: templates/base.html:225 templates/contact.html:72
 msgid "open"
 msgstr "открыта"
 
-#: templates/base.html:230 templates/contact.html:77
+#: templates/base.html:228 templates/contact.html:77
 msgid "Mon-Fri"
 msgstr "по рабочим дням"
 
-#: templates/base.html:232 templates/contact.html:82
+#: templates/base.html:230 templates/contact.html:82
 msgid "Saturday"
 msgstr "по субботам"
 
@@ -89,19 +89,17 @@ msgid "Autolammutuste Liidu liige"
 msgstr "член ассоциации переработчиков автомобилей"
 
 #: yard/forms.py:21
-#, fuzzy
-#| msgid "email"
 msgid "your email"
-msgstr "электронная почта"
+msgstr "Ваш адрес электронной почты"
 
 #: yard/forms.py:22
 msgid "your phone"
-msgstr ""
+msgstr "Ваш номер телефона "
 
 #: yard/forms.py:23
 msgid "subject"
-msgstr ""
+msgstr "Тема"
 
 #: yard/forms.py:25
 msgid "message"
-msgstr ""
+msgstr "Ваш запрос"
