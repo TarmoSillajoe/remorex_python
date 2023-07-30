@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-30 11:40+0000\n"
+"POT-Creation-Date: 2023-07-30 16:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,31 +34,31 @@ msgstr "inglise keel"
 msgid "German"
 msgstr "saksa keel"
 
-#: templates/base.html:128
+#: templates/base.html:129
 msgid "open main memu"
 msgstr ""
 
-#: templates/base.html:159
+#: templates/base.html:160
 msgid "spare-parts"
 msgstr "varuosad"
 
-#: templates/base.html:163
+#: templates/base.html:164
 msgid "services"
 msgstr "teenused"
 
-#: templates/base.html:167 templates/contact.html:4
+#: templates/base.html:168 templates/contact.html:4
 msgid "contact"
 msgstr "kontakt"
 
-#: templates/base.html:226 templates/contact.html:72
+#: templates/base.html:227 templates/contact.html:72
 msgid "open"
 msgstr "avatud"
 
-#: templates/base.html:229 templates/contact.html:77
+#: templates/base.html:230 templates/contact.html:77
 msgid "Mon-Fri"
 msgstr "esmasp-reede"
 
-#: templates/base.html:231 templates/contact.html:82
+#: templates/base.html:232 templates/contact.html:82
 msgid "Saturday"
 msgstr "laupäev"
 
@@ -69,6 +69,10 @@ msgstr "Asukoht ja kontakt"
 #: templates/contact.html:49
 msgid "phone"
 msgstr "telefon"
+
+#: templates/contact.html:55
+msgid "email"
+msgstr "e-mail"
 
 #: templates/home.html:6
 msgid "Home"
@@ -86,8 +90,18 @@ msgstr ""
 msgid "Autolammutuste Liidu liige"
 msgstr "Autolammutuste Liidu liige"
 
+#: yard/forms.py:21
+msgid "your email"
+msgstr "Teie e-post"
+
 #: yard/forms.py:22
-#, fuzzy
-#| msgid "phone"
 msgid "your phone"
-msgstr "telefon"
+msgstr "Teie telefon"
+
+#: yard/forms.py:23
+msgid "subject"
+msgstr "teema"
+
+#: yard/forms.py:25
+msgid "message"
+msgstr "Teie päring"
