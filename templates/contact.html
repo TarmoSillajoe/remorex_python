@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% block title %}
-Contact
+{% translate 'contact' %}
 {% endblock title %}
 {% block content %}
 <div
@@ -12,7 +12,8 @@ Contact
             <section class="w-full p-2 max-w-7xl mx-auto">
                 <h2
                     class="text-xl sm:text-2xl lg:text-3xl text-gray-800 font-semibold mb-10">
-                    <a id="contact">{% translate "Contact" %}</a>
+                    <a
+                        id="contact">{% translate "contact-header" %}</a>
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div class="space-y-8">

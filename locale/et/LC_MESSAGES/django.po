@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-29 05:27+0000\n"
+"POT-Creation-Date: 2023-07-30 10:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,42 +34,54 @@ msgstr "inglise keel"
 msgid "German"
 msgstr "saksa keel"
 
-#: templates/base.html:83
+#: templates/base.html:128
 msgid "open main memu"
 msgstr ""
 
-#: templates/base.html:164 templates/contact.html:71
-msgid "open"
-msgstr ""
+#: templates/base.html:159
+msgid "spare-parts"
+msgstr "varuosad"
 
-#: templates/base.html:167 templates/contact.html:76
+#: templates/base.html:163
+msgid "services"
+msgstr "teenused"
+
+#: templates/base.html:167 templates/contact.html:4
+msgid "contact"
+msgstr "kontakt"
+
+#: templates/base.html:226 templates/contact.html:72
+msgid "open"
+msgstr "avatud"
+
+#: templates/base.html:229 templates/contact.html:77
 msgid "Mon-Fri"
 msgstr "esmasp-reede"
 
-#: templates/base.html:169 templates/contact.html:81
+#: templates/base.html:231 templates/contact.html:82
 msgid "Saturday"
 msgstr "laupäev"
 
-#: templates/contact.html:15
-msgid "Contact"
-msgstr ""
+#: templates/contact.html:16
+msgid "contact-header"
+msgstr "Asukoht ja kontakt"
 
-#: templates/contact.html:48
+#: templates/contact.html:49
 msgid "phone"
-msgstr ""
+msgstr "telefon"
 
-#: templates/home.html:5
+#: templates/home.html:6
 msgid "Home"
-msgstr ""
+msgstr "pealeht"
 
 # templates/home.html
-#: templates/home.html:12
+#: templates/home.html:13
 msgid "intro"
 msgstr ""
 "on asutatud 1997. aastal ja on Eestis ainulaadne BMW lammutusele ja "
 "varuosade müügile spetsialiseerunud koda. Ettevõttes töötavad oma ala "
 "spetsialistid, kelle prioriteediks on pakkuda Teile sobivat teenindust. Oleme"
 
-#: templates/home.html:13
+#: templates/home.html:14
 msgid "Autolammutuste Liidu liige"
-msgstr ""
+msgstr "Autolammutuste Liidu liige"

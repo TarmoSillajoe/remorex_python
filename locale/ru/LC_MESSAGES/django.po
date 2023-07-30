@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-29 05:27+0000\n"
+"POT-Creation-Date: 2023-07-30 10:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,38 +36,50 @@ msgstr "английский язык"
 msgid "German"
 msgstr "немецкий язык"
 
-#: templates/base.html:83
+#: templates/base.html:128
 msgid "open main memu"
 msgstr "открыть главное меню"
 
-#: templates/base.html:164 templates/contact.html:71
+#: templates/base.html:159
+msgid "spare-parts"
+msgstr "запчасти"
+
+#: templates/base.html:163
+msgid "services"
+msgstr "услуги"
+
+#: templates/base.html:167 templates/contact.html:4
+msgid "contact"
+msgstr "контакты"
+
+#: templates/base.html:226 templates/contact.html:72
 msgid "open"
 msgstr "открыта"
 
-#: templates/base.html:167 templates/contact.html:76
+#: templates/base.html:229 templates/contact.html:77
 msgid "Mon-Fri"
 msgstr "по рабочим дням"
 
-#: templates/base.html:169 templates/contact.html:81
+#: templates/base.html:231 templates/contact.html:82
 msgid "Saturday"
 msgstr "по субботам"
 
-#: templates/contact.html:15
-msgid "Contact"
+#: templates/contact.html:16
+msgid "contact-header"
+msgstr "Контакты и реквизиты"
+
+#: templates/contact.html:49
+msgid "phone"
 msgstr ""
 
-#: templates/contact.html:48
-msgid "phone"
-msgstr "телефон"
-
-#: templates/home.html:5
+#: templates/home.html:6
 msgid "Home"
 msgstr "главная страница"
 
-#: templates/home.html:12
+#: templates/home.html:13
 msgid "intro"
 msgstr "была создана в 1997 году"
 
-#: templates/home.html:13
+#: templates/home.html:14
 msgid "Autolammutuste Liidu liige"
 msgstr "член ассоциации переработчиков автомобилей"
