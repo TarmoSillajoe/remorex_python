@@ -1,15 +1,21 @@
 {% load i18n %}
-<form id="language-form"
+{% load compress %}
+
+<script>
+    function submitLanguageSelection() {
+        document.getElementById('languageForm').submit();
+    }
+</script>
+
+<form id="languageForm"
     action="{% url 'set_language' %}"
     method='post'>
+    {% csrf_token %}
     <input type="hidden"
         name="next"
-        value="{{ request.path }}">
+        value="{{ redirect_to }}">
     <select id="languages"
-        hx-post="{% url 'set_language' %}"
-        hx-include="#language-form *"
-        hx-target="#language-form"
-        hx-swap="none"
+        onchange="submitLanguageSelection()"
         name="language"
         class="bg-gray-50 border border-gray-300 
         text-gray-900 text-sm rounded-lg focus:ring-blue-500 
