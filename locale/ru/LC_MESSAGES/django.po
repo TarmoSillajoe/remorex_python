@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-30 17:54+0000\n"
+"POT-Creation-Date: 2023-07-31 08:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,6 +87,10 @@ msgstr "была создана в 1997 году"
 #: templates/home.html:14
 msgid "Autolammutuste Liidu liige"
 msgstr "член ассоциации переработчиков автомобилей"
+
+#: templates/home.html:24
+msgid "contact_us"
+msgstr "Мы рады ответить на ваши вопросы"
 
 #: yard/forms.py:21
 msgid "your email"
