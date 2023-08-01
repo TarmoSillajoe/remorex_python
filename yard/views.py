@@ -7,6 +7,7 @@ from django.core.mail import send_mail, BadHeaderError
 from django.utils import translation
 from django import http
 from django.conf import settings
+from django.utils.translation import gettext_lazy
 
 
 def homeview(request):
@@ -108,4 +109,4 @@ def query_view(request):
 
 
 def query_success_view(request):
-    return HttpResponse("Päring saadetud. Täname.")
+    return HttpResponse(gettext_lazy("query_success"))
