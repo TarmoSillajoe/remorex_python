@@ -16,7 +16,7 @@ class ViewsTestCase(TestCase):
     def test_language_using_et_cookie(self):
         self.client.cookies.load({settings.LANGUAGE_COOKIE_NAME: "de"})
         response = self.client.get("/")
-        self.assertContains(response, b"Liidu liige")
+        self.assertContains(response, b"Fachverband")
 
     def test_language_using_en_cookie(self):
         self.client.cookies.load({settings.LANGUAGE_COOKIE_NAME: "en"})
