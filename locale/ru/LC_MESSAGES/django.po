@@ -82,11 +82,11 @@ msgstr "главная страница"
 
 #: templates/home.html:13
 msgid "intro"
-msgstr "была создана в 1997 году"
+msgstr "была создана в 1997 году."
 
 #: templates/home.html:14
 msgid "Autolammutuste Liidu liige"
-msgstr "член ассоциации переработчиков автомобилей"
+msgstr "Являемся членом ассоциации aвторазборок  (Eesti Autolammutuste Liit)"
 
 #: templates/home.html:24
 msgid "contact_us"
