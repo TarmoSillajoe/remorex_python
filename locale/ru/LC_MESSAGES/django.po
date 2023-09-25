@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-01 19:35+0000\n"
+"POT-Creation-Date: 2023-09-25 09:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -91,6 +91,10 @@ msgstr "Являемся членом ассоциации aвторазборо
 #: templates/home.html:24
 msgid "contact_us"
 msgstr "Мы рады ответить на ваши вопросы"
+
+#: templates/yard/query.html:29
+msgid "Send"
+msgstr "отправить запрос"
 
 #: templates/yard/query_success.html:3 yard/views.py:112
 msgid "query_success"
