@@ -27,7 +27,7 @@ class ViewsTestCase(TestCase):
         self.client.cookies.load({settings.LANGUAGE_COOKIE_NAME: "ru"})
         response = self.client.get("")
         decoded_content = response.content.decode("utf-8")
-        self.assertIn("переработчиков", decoded_content)
+        self.assertIn("aвторазборок", decoded_content)
 
     def test_language_using_header(self):
         response = self.client.get("", headers={"accept-language": "et"})

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-25 09:24+0000\n"
+"POT-Creation-Date: 2023-10-07 16:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,31 +34,31 @@ msgstr "inglise keel"
 msgid "German"
 msgstr "saksa keel"
 
-#: templates/base.html:127
+#: templates/base.html:131
 msgid "open main memu"
 msgstr ""
 
-#: templates/base.html:158
+#: templates/base.html:162
 msgid "spare-parts"
 msgstr "varuosad"
 
-#: templates/base.html:162
+#: templates/base.html:166
 msgid "services"
 msgstr "teenused"
 
-#: templates/base.html:166 templates/contact.html:4
+#: templates/base.html:170 templates/contact.html:4
 msgid "contact"
 msgstr "kontakt"
 
-#: templates/base.html:225 templates/contact.html:72
+#: templates/base.html:229 templates/contact.html:72
 msgid "open"
 msgstr "avatud"
 
-#: templates/base.html:228 templates/contact.html:77
+#: templates/base.html:232 templates/contact.html:77
 msgid "Mon-Fri"
 msgstr "esmasp-reede"
 
-#: templates/base.html:230 templates/contact.html:82
+#: templates/base.html:234 templates/contact.html:82
 msgid "Saturday"
 msgstr "laupäev"
 
