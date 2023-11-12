@@ -39,7 +39,6 @@ DEBUG = "RENDER" not in os.environ
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
-    ".fly.dev",
     "remorex.onrender.com",
     "remoreks.ee",
     "*",
