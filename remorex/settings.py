@@ -42,6 +42,7 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "remorex.onrender.com",
     "remoreks.ee",
+    "216.24.57.1",
     "*",
 ]
 
