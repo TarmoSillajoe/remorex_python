@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get(
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DEBUG = "zonevs.eu" not in os.environ
+DEBUG = "zonevs.eu" not in os.environ.get("VS_LOOPBACK_HOST")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
