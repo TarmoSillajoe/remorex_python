@@ -52,7 +52,6 @@ pillow
 pip-chill
 platformdirs
 prompt-toolkit
-psycopg2-binary
 ptyprocess
 pure-eval
 pycodestyle
