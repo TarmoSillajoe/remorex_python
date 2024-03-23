@@ -10,13 +10,12 @@ certifi
 cffi
 charset-normalizer
 click
-coverage
 cryptography
 debugpy
 decorator
 defusedxml
 dj-database-url
-Django<=4.1.5
+Django
 django-allauth
 django-appconf
 django-compressor
@@ -42,7 +41,6 @@ pickleshare
 Pillow
 platformdirs
 prompt-toolkit
-psycopg2-binary
 ptyprocess
 pure-eval
 pycodestyle

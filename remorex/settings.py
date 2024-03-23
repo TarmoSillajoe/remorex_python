@@ -9,13 +9,14 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+
 import os
-from dotenv import load_dotenv
 from pathlib import Path
-import pymysql
 
 import dj_database_url
+import pymysql
 from django.utils.translation import gettext_lazy as _
+from dotenv import load_dotenv
 
 load_dotenv()
 
@@ -28,7 +29,7 @@ SECRET_KEY = os.environ.get(
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DEBUG = "zonevs.eu" not in os.environ.get("VS_LOOPBACK_HOST")
+DEBUG = "zonevs.eu" not in os.environ.get("VS_LOOPBACK_HOST", "")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -111,7 +112,8 @@ WSGI_APPLICATION = "remorex.wsgi.application"
 
 DATABASES = {
     "default": dj_database_url.config(
-        default=str(os.getenv("DATABASE_URI")),
+        os.environ.get("DATABASE_URI"),
+        default=os.getenv("DATABASE_URI"),
         conn_max_age=600,
     )
 }
