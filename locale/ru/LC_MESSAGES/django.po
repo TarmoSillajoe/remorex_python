@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-07 16:09+0000\n"
+"POT-Creation-Date: 2024-03-24 10:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,19 +20,19 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: remorex/settings.py:207
+#: remorex/settings.py:215
 msgid "Estonian"
 msgstr "эстонский язык"
 
-#: remorex/settings.py:208
+#: remorex/settings.py:216
 msgid "Russian"
 msgstr "русский язык"
 
-#: remorex/settings.py:209
+#: remorex/settings.py:217
 msgid "English"
 msgstr "английский язык"
 
-#: remorex/settings.py:210
+#: remorex/settings.py:218
 msgid "German"
 msgstr "немецкий язык"
 
