@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-07 16:09+0000\n"
+"POT-Creation-Date: 2024-03-24 10:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,19 +18,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: remorex/settings.py:207
+#: remorex/settings.py:215
 msgid "Estonian"
 msgstr "eesti keel"
 
-#: remorex/settings.py:208
+#: remorex/settings.py:216
 msgid "Russian"
 msgstr "vene keel"
 
-#: remorex/settings.py:209
+#: remorex/settings.py:217
 msgid "English"
 msgstr "inglise keel"
 
-#: remorex/settings.py:210
+#: remorex/settings.py:218
 msgid "German"
 msgstr "saksa keel"
 
