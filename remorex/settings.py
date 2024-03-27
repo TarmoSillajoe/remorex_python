@@ -39,17 +39,12 @@ DEBUG = "zonevs.eu" not in os.environ.get("VS_LOOPBACK_HOST", "")
 # SECURITY WARNING: don't run with debug turned on in production!
 
 ALLOWED_HOSTS = [
-    "localhost",
+    "127.1.151.231",
     "127.0.0.1",
-    "remorex.onrender.com",
-    "remoreks.ee",
-    "216.24.57.1",
-    "*",
+    "0.0.0.0",
+    "185.43.106.116",
+    "remoreks.ee"
 ]
-
-RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
-if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 # Application definition
 
