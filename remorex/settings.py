@@ -39,14 +39,12 @@ DEBUG = "zonevs.eu" not in os.environ.get("VS_LOOPBACK_HOST", "")
 # SECURITY WARNING: don't run with debug turned on in production!
 
 ALLOWED_HOSTS = [
-    "localhost",
+    "127.1.151.231",
     "127.0.0.1",
-    "remorex.onrender.com",
+    "0.0.0.0",
+    "185.43.106.116",
     "remoreks.ee",
-    "216.24.57.1",
-    "*",
 ]
-
 
 # Application definition
 
