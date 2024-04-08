@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-24 10:47+0000\n"
+"POT-Creation-Date: 2024-04-08 06:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,47 +18,47 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: remorex/settings.py:215
+#: remorex/settings.py:211
 msgid "Estonian"
 msgstr "eesti keel"
 
-#: remorex/settings.py:216
+#: remorex/settings.py:212
 msgid "Russian"
 msgstr "vene keel"
 
-#: remorex/settings.py:217
+#: remorex/settings.py:213
 msgid "English"
 msgstr "inglise keel"
 
-#: remorex/settings.py:218
+#: remorex/settings.py:214
 msgid "German"
 msgstr "saksa keel"
 
-#: templates/base.html:131
+#: templates/base.html:132
 msgid "open main memu"
 msgstr ""
 
-#: templates/base.html:162
+#: templates/base.html:163
 msgid "spare-parts"
 msgstr "varuosad"
 
-#: templates/base.html:166
+#: templates/base.html:167
 msgid "services"
 msgstr "teenused"
 
-#: templates/base.html:170 templates/contact.html:4
+#: templates/base.html:171 templates/contact.html:4
 msgid "contact"
 msgstr "kontakt"
 
-#: templates/base.html:229 templates/contact.html:72
+#: templates/base.html:230 templates/contact.html:72
 msgid "open"
 msgstr "avatud"
 
-#: templates/base.html:232 templates/contact.html:77
+#: templates/base.html:233 templates/contact.html:77
 msgid "Mon-Fri"
 msgstr "esmasp-reede"
 
-#: templates/base.html:234 templates/contact.html:82
+#: templates/base.html:235 templates/contact.html:82
 msgid "Saturday"
 msgstr "laupäev"
 
@@ -93,6 +93,10 @@ msgstr "Autolammutuste Liidu liige"
 #: templates/home.html:24
 msgid "contact_us"
 msgstr "Vastame meelsasti Teie päringule"
+
+#: templates/registration/login.html:39
+msgid "Forgot Password?"
+msgstr "Unustasid salasõna?"
 
 #: templates/yard/query.html:29
 msgid "Send"

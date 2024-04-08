@@ -1,4 +1,5 @@
 {% extends "../base.html" %}
+{% load i18n %}
 {% load widget_tweaks %}
 {% block title %}
     sign up
@@ -33,6 +34,9 @@ LogIn
             </div>
         </form>
         <a class="block block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-           href="{% url 'password_reset' %}">Forgot Password?</a>
+           href="{% url 'password_reset' %}"
+           >
+           {% translate 'Forgot Password?' %}
+        </a>
     </div>
 {% endblock content %}

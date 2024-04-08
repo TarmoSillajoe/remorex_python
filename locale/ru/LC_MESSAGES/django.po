@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-24 10:47+0000\n"
+"POT-Creation-Date: 2024-04-08 06:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,47 +20,47 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: remorex/settings.py:215
+#: remorex/settings.py:211
 msgid "Estonian"
 msgstr "эстонский язык"
 
-#: remorex/settings.py:216
+#: remorex/settings.py:212
 msgid "Russian"
 msgstr "русский язык"
 
-#: remorex/settings.py:217
+#: remorex/settings.py:213
 msgid "English"
 msgstr "английский язык"
 
-#: remorex/settings.py:218
+#: remorex/settings.py:214
 msgid "German"
 msgstr "немецкий язык"
 
-#: templates/base.html:131
+#: templates/base.html:132
 msgid "open main memu"
 msgstr "открыть главное меню"
 
-#: templates/base.html:162
+#: templates/base.html:163
 msgid "spare-parts"
 msgstr "запчасти"
 
-#: templates/base.html:166
+#: templates/base.html:167
 msgid "services"
 msgstr "услуги"
 
-#: templates/base.html:170 templates/contact.html:4
+#: templates/base.html:171 templates/contact.html:4
 msgid "contact"
 msgstr "контакты"
 
-#: templates/base.html:229 templates/contact.html:72
+#: templates/base.html:230 templates/contact.html:72
 msgid "open"
 msgstr "открыта"
 
-#: templates/base.html:232 templates/contact.html:77
+#: templates/base.html:233 templates/contact.html:77
 msgid "Mon-Fri"
 msgstr "по рабочим дням"
 
-#: templates/base.html:234 templates/contact.html:82
+#: templates/base.html:235 templates/contact.html:82
 msgid "Saturday"
 msgstr "по субботам"
 
@@ -91,6 +91,10 @@ msgstr "Являемся членом ассоциации aвторазборо
 #: templates/home.html:24
 msgid "contact_us"
 msgstr "Мы рады ответить на ваши вопросы"
+
+#: templates/registration/login.html:39
+msgid "Forgot Password?"
+msgstr "Забыли пароль?"
 
 #: templates/yard/query.html:29
 msgid "Send"
