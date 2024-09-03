@@ -39,12 +39,14 @@ DEBUG = "zonevs.eu" not in os.environ.get("VS_LOOPBACK_HOST", "")
 # SECURITY WARNING: don't run with debug turned on in production!
 
 ALLOWED_HOSTS = [
+    "[fe80::acc8:46ff:fea7:db6e]",
     "localhost",
     "127.1.151.231",
     "127.0.0.1",
     "0.0.0.0",
     "185.43.106.116",
     "remoreks.ee",
+    "www.remoreks.ee",
 ]
 
 # Application definition
@@ -162,6 +164,7 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
+
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
@@ -220,14 +223,16 @@ LOCALE_PATHS = [
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 DEFAULT_FROM_EMAIL = "remoreks@remoreks.ee"
-EMAIL_HOST = "csmtp.telia.ee"
 
 if not DEBUG:
+    EMAIL_HOST = os.environ.get("EMAIL_HOST")
     EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
     EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
 else:
-    EMAIL_HOST_PASSWORD = str(os.getenv("EMAIL_HOST_PASSWORD"))
+    EMAIL_HOST = os.getenv("EMAIL_HOST")
+    EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
     EMAIL_HOST_USER = str(os.getenv("EMAIL_HOST_USER"))
 
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+EMAIL_TIMEOUT = 60

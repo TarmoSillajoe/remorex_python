@@ -6,7 +6,6 @@ atpublic
 attrs
 awscrt
 backcall
-backports-zoneinfo
 boto3
 botocore
 certifi

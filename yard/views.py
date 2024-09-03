@@ -1,13 +1,11 @@
-from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from .models import Part, AssemblyGroup
-from .forms import PartForm, QueryForm
+from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse, HttpResponseRedirect
-from django.core.mail import send_mail, BadHeaderError
-from django.utils import translation
-from django import http
-from django.conf import settings
+from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.translation import gettext_lazy
+
+from .forms import PartForm, QueryForm
+from .models import AssemblyGroup, Part
 
 
 def homeview(request):
@@ -98,7 +96,7 @@ def query_view(request):
                     message,
                     from_email="remoreks@remoreks.ee",
                     recipient_list=[
-                        "remoreks@remoreks.ee",
+                        # "remoreks@remoreks.ee",
                         "tsillajoe@gmail.com",
                     ],
                 )
