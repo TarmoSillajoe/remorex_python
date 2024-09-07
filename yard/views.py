@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.core.mail import BadHeaderError, send_mail
+from django.core.mail import BadHeaderError, send_mail, EmailMultiAlternatives
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.translation import gettext_lazy
@@ -88,18 +88,22 @@ def query_view(request):
                 "email": form.cleaned_data["email"],
                 "message": form.cleaned_data["message"],
             }
-            message = "\n".join(body.values())
-
+            text_content = "\n".join(body.values())
+            html_content = f"""
+                <p>{body.get('phone')}</p>
+                <p>{body.get('email')}</p>
+                <p>{body.get('message')}</p>
+                """
+            msg = EmailMultiAlternatives(
+                subject=subject,
+                body=text_content,
+                from_email="remoreks@remoreks.ee",
+                to=["tsillajoe@gmail.om"],
+                reply_to=["remoreks@remoreks.ee"],
+            )
+            msg.attach_alternative(html_content, mimetype="text/html")
             try:
-                send_mail(
-                    subject,
-                    message,
-                    from_email="remoreks@remoreks.ee",
-                    recipient_list=[
-                        # "remoreks@remoreks.ee",
-                        "tsillajoe@gmail.com",
-                    ],
-                )
+                msg.send()
             except BadHeaderError:
                 return HttpResponse("Invalid header found")
             return redirect("query_success")

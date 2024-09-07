@@ -22,7 +22,7 @@ load_dotenv()
 
 SECRET_KEY = os.environ.get(
     "SECRET_KEY",
-    default=str(os.getenv("SECRET_KEY")),
+    default=os.getenv("SECRET_KEY"),
 )
 
 
@@ -222,17 +222,13 @@ LOCALE_PATHS = [
 ]
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+
 DEFAULT_FROM_EMAIL = "remoreks@remoreks.ee"
 
-if not DEBUG:
-    EMAIL_HOST = os.environ.get("EMAIL_HOST")
-    EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
-    EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
-else:
-    EMAIL_HOST = os.getenv("EMAIL_HOST")
-    EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
-    EMAIL_HOST_USER = str(os.getenv("EMAIL_HOST_USER"))
+EMAIL_HOST = os.getenv("EMAIL_HOST")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
 
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+EMAIL_PORT = os.getenv("EMAIL_PORT")
+EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS")
 EMAIL_TIMEOUT = 60

@@ -10,6 +10,6 @@ output.css
 **/CACHE/*
 secret_key.txt
 staticfiles/
-*virtualenv*/
 .env
 static/src/output.css
+.python-version
