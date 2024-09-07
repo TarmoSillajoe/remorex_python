@@ -98,7 +98,7 @@ def query_view(request):
                 subject=subject,
                 body=text_content,
                 from_email="remoreks@remoreks.ee",
-                to=["tsillajoe@gmail.om"],
+                to=["tsillajoe@gmail.com", "remoreks@remoreks.ee"],
                 reply_to=["remoreks@remoreks.ee"],
             )
             msg.attach_alternative(html_content, mimetype="text/html")
