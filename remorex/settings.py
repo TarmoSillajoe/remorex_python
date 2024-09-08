@@ -186,7 +186,6 @@ DEFAULT_FROM_EMAIL = "remoreks@remoreks.ee"
 EMAIL_HOST = os.getenv("EMAIL_HOST")
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
-
 EMAIL_PORT = int(os.getenv("EMAIL_PORT"))
-EMAIL_USE_TLS = True if DEBUG else False
+EMAIL_USE_TLS = False
 EMAIL_TIMEOUT = 60
