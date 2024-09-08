@@ -7,6 +7,8 @@ from django.utils.translation import gettext_lazy
 from .forms import PartForm, QueryForm
 from .models import AssemblyGroup, Part
 
+from honeypot.decorators import check_honeypot
+
 
 def homeview(request):
     return render(
@@ -76,6 +78,7 @@ def part_edit_view(request, part_id):
     return render(request, "yard/part_edit.html", {"form": form})
 
 
+@check_honeypot(field_name="make")
 def query_view(request):
     if request.method == "GET":
         form = QueryForm()
@@ -98,7 +101,7 @@ def query_view(request):
                 subject=subject,
                 body=text_content,
                 from_email="remoreks@remoreks.ee",
-                to=["tsillajoe@gmail.com", "remoreks@remoreks.ee"],
+                to=["tsillajoe@gmail.com"],
                 reply_to=["remoreks@remoreks.ee"],
             )
             msg.attach_alternative(html_content, mimetype="text/html")

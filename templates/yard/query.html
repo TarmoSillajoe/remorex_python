@@ -1,3 +1,4 @@
+{% load honeypot %}
 {% load i18n %}
 {% load compress %}
 {% load static %}
@@ -8,6 +9,7 @@
   hx-swap="outerHTML"
   class="space-y-8">
   {% csrf_token %}
+  {% render_honeypot_field "make" %}
   {{ form.non_field_errors }}
   {% for hidden_field in form.hidden_fields %}
   {{ hidden_field.errors }}

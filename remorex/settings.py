@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "honeypot",
     "widget_tweaks",
     "accounts",
     "yard",
@@ -178,7 +179,7 @@ LOCALE_PATHS = [
     BASE_DIR / "locale",
 ]
 
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 DEFAULT_FROM_EMAIL = "remoreks@remoreks.ee"
 
