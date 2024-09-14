@@ -24,6 +24,7 @@ django-appconf
 django-compressor
 django-crispy-forms
 django-htmx
+django-honeypot
 django-phonenumber-field
 django-phonenumbers
 django-storages

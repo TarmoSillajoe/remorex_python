@@ -13,3 +13,4 @@ staticfiles/
 .env
 static/src/output.css
 .python-version
+*.log

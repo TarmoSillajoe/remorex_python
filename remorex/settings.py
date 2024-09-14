@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "honeypot",
     "widget_tweaks",
     "accounts",
     "yard",
@@ -228,7 +229,6 @@ DEFAULT_FROM_EMAIL = "remoreks@remoreks.ee"
 EMAIL_HOST = os.getenv("EMAIL_HOST")
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
-
-EMAIL_PORT = os.getenv("EMAIL_PORT")
-EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS")
+EMAIL_PORT = 25
+EMAIL_USE_TLS = False
 EMAIL_TIMEOUT = 60
