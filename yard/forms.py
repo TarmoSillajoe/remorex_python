@@ -1,4 +1,5 @@
 from django import forms
+from captcha.fields import CaptchaField
 
 from .models import Part
 from django.utils.translation import gettext_lazy
@@ -24,3 +25,4 @@ class QueryForm(forms.Form):
     message = forms.CharField(
         widget=forms.Textarea, required=True, label=gettext_lazy("message")
     )
+    captcha = CaptchaField()

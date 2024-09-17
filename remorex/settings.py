@@ -39,7 +39,6 @@ DEBUG = "zonevs.eu" not in os.environ.get("VS_LOOPBACK_HOST", "")
 # SECURITY WARNING: don't run with debug turned on in production!
 
 ALLOWED_HOSTS = [
-    "[fe80::acc8:46ff:fea7:db6e]",
     "localhost",
     "127.1.151.231",
     "127.0.0.1",
@@ -60,6 +59,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "honeypot",
+    "captcha",
     "widget_tweaks",
     "accounts",
     "yard",
@@ -222,7 +222,7 @@ LOCALE_PATHS = [
     BASE_DIR / "locale",
 ]
 
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 DEFAULT_FROM_EMAIL = "remoreks@remoreks.ee"
 
