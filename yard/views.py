@@ -1,12 +1,12 @@
 from django.contrib.auth.decorators import login_required
 from django.core.mail import BadHeaderError, send_mail, EmailMultiAlternatives
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadRequest
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.translation import gettext_lazy
-
+from django.conf import settings
 from .forms import PartForm, QueryForm
 from .models import AssemblyGroup, Part
-
+import requests
 from honeypot.decorators import check_honeypot
 
 
@@ -78,13 +78,32 @@ def part_edit_view(request, part_id):
     return render(request, "yard/part_edit.html", {"form": form})
 
 
+def verify_turnstile_token(token, remote_ip=None):
+    url = "https://challenges.cloudflare.com/turnstile/v0/siteverify"
+    data = {"secret": settings.TURNSTILE_SECRET_KEY, "response": token}
+    if remote_ip:
+        data["remoteip"] = remote_ip
+    response = requests.post(url, data)
+    result = response.json()
+    return result.get("success", False)
+
+
 @check_honeypot(field_name="make")
 def query_view(request):
     if request.method == "GET":
         form = QueryForm()
     else:
         form = QueryForm(request.POST)
+        turnstile_token = request.POST.get("cf-turnstile-response")
+        if not turnstile_token:
+            return HttpResponseBadRequest("Turnstile token missing")
+        is_valid = verify_turnstile_token(
+            turnstile_token, request.META.get("REMOTE_ADDR")
+        )
+        if not is_valid:
+            return HttpResponseBadRequest("Invalid Turnstile verification")
         if form.is_valid():
+
             subject = form.cleaned_data["subject"]
             body = {
                 "phone": form.cleaned_data["phone"],

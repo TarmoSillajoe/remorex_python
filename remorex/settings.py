@@ -222,7 +222,7 @@ LOCALE_PATHS = [
     BASE_DIR / "locale",
 ]
 
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 DEFAULT_FROM_EMAIL = "remoreks@remoreks.ee"
 
@@ -233,3 +233,5 @@ EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
 EMAIL_PORT = 25
 EMAIL_USE_TLS = False
 EMAIL_TIMEOUT = 60
+
+TURNSTILE_SECRET_KEY = os.getenv("TURNSTILE_SECRET_KEY")
