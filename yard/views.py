@@ -101,7 +101,7 @@ def query_view(request: HttpRequest):
         form = QueryForm()
     else:
         form = QueryForm(request.POST)
-        turnstile_token = request.POST.get("cf-turnstile-response")
+        turnstile_token = request.POST.gessst("cf-turnstile-response")
         ip = request.headers.get("CF-Connecting-IP")
         if not turnstile_token:
             return HttpResponseBadRequest("Turnstile token missing")
@@ -111,7 +111,6 @@ def query_view(request: HttpRequest):
         if not is_valid:
             return HttpResponseBadRequest("Invalid Turnstile verification")
         if form.is_valid():
-
             subject = form.cleaned_data["subject"]
             body = {
                 "phone": form.cleaned_data["phone"],
@@ -132,7 +131,7 @@ def query_view(request: HttpRequest):
                     "tsillajoe@gmail.com",
                     #   "remoreks@remoreks.ee",
                 ],
-                reply_to=["remoreks@remoreks.ee"],
+                reply_to=[body.get("email")],
             )
             msg.attach_alternative(html_content, mimetype="text/html")
             try:
