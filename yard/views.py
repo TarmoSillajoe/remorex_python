@@ -1,6 +1,11 @@
 from django.contrib.auth.decorators import login_required
 from django.core.mail import BadHeaderError, send_mail, EmailMultiAlternatives
-from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadRequest
+from django.http import (
+    HttpResponse,
+    HttpResponseRedirect,
+    HttpResponseBadRequest,
+    HttpRequest,
+)
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.translation import gettext_lazy
 from django.conf import settings
@@ -81,20 +86,23 @@ def part_edit_view(request, part_id):
 def verify_turnstile_token(token, remote_ip=None):
     url = "https://challenges.cloudflare.com/turnstile/v0/siteverify"
     data = {"secret": settings.TURNSTILE_SECRET_KEY, "response": token}
+
     if remote_ip:
         data["remoteip"] = remote_ip
+
     response = requests.post(url, data)
     result = response.json()
     return result.get("success", False)
 
 
 @check_honeypot(field_name="make")
-def query_view(request):
+def query_view(request: HttpRequest):
     if request.method == "GET":
         form = QueryForm()
     else:
         form = QueryForm(request.POST)
         turnstile_token = request.POST.get("cf-turnstile-response")
+        ip = request.headers.get("CF-Connecting-IP")
         if not turnstile_token:
             return HttpResponseBadRequest("Turnstile token missing")
         is_valid = verify_turnstile_token(
@@ -120,7 +128,10 @@ def query_view(request):
                 subject=subject,
                 body=text_content,
                 from_email="remoreks@remoreks.ee",
-                to=["tsillajoe@gmail.com", "remoreks@remoreks.ee"],
+                to=[
+                    "tsillajoe@gmail.com",
+                    #   "remoreks@remoreks.ee",
+                ],
                 reply_to=["remoreks@remoreks.ee"],
             )
             msg.attach_alternative(html_content, mimetype="text/html")

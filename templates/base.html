@@ -33,6 +33,7 @@
     <script src="https://unpkg.com/htmx.org@2.0.2"
         integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vji+VSeHOThJ"
         crossorigin="anonymous"></script>
+
 </head>
 
 <body class="bg-gray-200 dark:bg-gray-800">
@@ -300,12 +301,20 @@
             event) => {
             event.detail.headers['X-CSRFToken'] =
                 '{{ csrf_token }}';
-        })
+        });
+
+        document.body.addEventListener('htmx:after-swap', (event) => {
+            if (event.detail.target.querySelector('.cf-turnstile') &&
+                !document.querySelector('script[src="https://challenges.cloudflare.com/turnstile/v0/api.js"]')
+            ) {
+                const script = document.createElement('script');
+                script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
+                script.async = true;
+                script.defer = true;
+                document.body.appendChild(script);
+            }
+        });
     </script>
-    <script
-        src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-        async
-        defer></script>
 
 
 </body>
